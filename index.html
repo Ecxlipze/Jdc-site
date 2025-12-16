@@ -75,57 +75,161 @@
       body{ padding-bottom:72px; }
     }
 
+    :root { --jdc-blue:#0b2d78; --jdc-blue-2:#1c3f94; }
+
+   
+
+    /* Footer background like screenshot */
     .footer-jdc{
-    background: radial-gradient(1200px 500px at 70% 10%, rgba(255,255,255,.12), transparent 60%),
-                linear-gradient(90deg, #173a8f, #0b2d78);
-  }
+      background: linear-gradient(90deg, var(--jdc-blue-2), var(--jdc-blue));
+      color:#fff;
+    }
 
-  .footer-logo{
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    border-radius: 12px;
-    background: rgba(0,0,0,.12);
-    padding: 10px;
-  }
+    /* LEFT column stacked: logo -> paragraph -> social */
+    .footer-left{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
 
-  .footer-title{
-    font-weight: 800;
-    letter-spacing: .2px;
-  }
+    .footer-logo-box{
+      background:#1a2f63;
+      border-radius:14px;
+      padding:14px;
+      width:130px;
+      height:130px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom: 14px;
+    }
+    .footer-logo-box img{
+      width:100%;
+      height:auto;
+      object-fit:contain;
+    }
 
-  .footer-links li{ margin-bottom: .35rem; }
-  .footer-links a{
-    color: rgba(255,255,255,.92);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: .95rem;
-  }
-  .footer-links a:hover{ text-decoration: underline; }
+    .footer-text{
+      font-size:14px;
+      line-height:1.7;
+      color:rgba(255,255,255,.85);
+      margin-bottom: 18px;
+      max-width: 360px;
+    }
 
-  .footer-social a{
-    width: 34px;
-    height: 34px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    background: rgba(255,255,255,.14);
-    color: #fff;
-    text-decoration: none;
-  }
-  .footer-social a:hover{ background: rgba(255,255,255,.22); }
+    .footer-social a{
+      width:34px;
+      height:34px;
+      background:rgba(255,255,255,.15);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      text-decoration:none;
+    }
+    .footer-social a:hover{ background:rgba(255,255,255,.25); }
 
-  .footer-newsletter .form-control{
-    border: 0;
-    padding: .85rem .9rem;
-    border-radius: .6rem 0 0 .6rem;
-  }
-  .footer-newsletter .btn{
-    border: 0;
-    padding: .85rem 1rem;
-    border-radius: 0 .6rem .6rem 0;
-  }
+    .footer-heading{
+      font-weight:800;
+      letter-spacing:.2px;
+      margin-bottom: 18px;
+    }
+
+    .footer-heading-sm{
+      font-weight:800;
+      letter-spacing:.2px;
+      margin-bottom: 14px;
+    }
+
+    /* Campaign links like screenshot (bold-ish, no underline) */
+    .footer-links{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .footer-links li{
+      margin-bottom: 6px;
+    }
+    .footer-links a{
+      color: rgba(255,255,255,.92);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
+    .footer-links a:hover{ text-decoration: underline; }
+
+    /* Newsletter: input + yellow submit */
+    .footer-newsletter{
+      display:flex;
+      width:100%;
+      /* max-width: 320px; */
+      margin-bottom: 22px;
+      margin-top: 30%;
+    }
+    .footer-newsletter input{
+      flex:1;
+      padding:12px 14px;
+      border:none;
+      border-radius:8px 0 0 8px;
+      outline:none;
+    }
+    .footer-newsletter button{
+      background:#f5c21b;
+      border:none;
+      padding:12px 16px;
+      font-weight:800;
+      border-radius:0 8px 8px 0;
+    }
+
+    .footer-contact{
+      font-size:14px;
+      color:rgba(255,255,255,.9);
+      margin-bottom: 8px;
+    }
+
+    /* Small spacing adjustments on mobile */
+   
+    @media (max-width: 767px) {
+    .footer-newsletter{
+        margin-top: 2%;
+      }
+      .footer-left{
+        align-items: center !important;
+        text-align: center;
+      }
+      .footer-heading-sm {
+        text-align: center;
+      }
+      .footer-contact{
+        text-align: center;
+      }
+      .footer-heading {
+        padding-left: 10%;
+      }
+      .footer-links{
+         padding-left: 10%;
+      }
+}
+/* tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* tablets */
+      .footer-newsletter{
+        margin-top: 2%;
+      }
+      .footer-heading{ text-align:left; }
+      .footer-newsletter{ max-width: 100%; }
+}
+/* laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* laptops */
+}
+ /* desktops */
+@media (min-width: 1200px) {
+  /* desktops */
+}
+
+
   </style>
 </head>
 
@@ -148,7 +252,7 @@
 <nav class="navbar navbar-expand-lg bg-white border-bottom d-none d-lg-flex">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="logo.png" class="brand-logo">
+      <img src="assets/images/header/logo.png" class="brand-logo">
     </a>
 
     <ul class="navbar-nav mx-auto gap-3">
@@ -227,7 +331,7 @@
 
       <div class="col">
         <a href="tel:1024" class="d-flex flex-column align-items-center nav-item-btn">
-          <i class="bi bi-ambulance"></i><span>Helpline</span>
+          <i class="bi bi-truck"></i><span>Helpline</span>
         </a>
       </div>
 
@@ -259,85 +363,94 @@
 
 
 <!-- FOOTER -->
-<footer class="footer-jdc text-white pt-5 pb-4">
-  <div class="container">
-    <div class="row g-4 align-items-start">
+ <!-- ======= FOOTER ======= -->
+  <footer class="footer-jdc">
+    <div class="container py-5">
+      <div class="row gy-4 align-items-start">
 
-      <!-- LEFT: Logo + About + Social -->
-      <div class="col-12 col-lg-4">
-        <div class="d-flex gap-3 align-items-start">
-          <img src="logo.png" class="footer-logo" alt="JDC Foundation">
-          <div>
-            <p class="mb-4 small opacity-75">
+        <!-- LEFT -->
+        <div class="col-12 col-lg-4">
+          <div class="footer-left">
+
+            <!-- Logo -->
+            <div class="footer-logo-box">
+              <img src="assets/images/header/logo.png" alt="JDC">
+            </div>
+
+            <!-- Paragraph -->
+            <p class="footer-text">
               A decade ago, JDC Foundation, a charitable and nonprofit organization journey starting from a
               small camp established at a densely populated area of Aisha Manzil, Karachi.
             </p>
 
-            <div class="d-flex gap-3 footer-social">
+            <!-- Social -->
+            <div class="footer-social d-flex gap-3">
               <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
               <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
               <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
               <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
             </div>
+
           </div>
         </div>
-      </div>
 
-      <!-- MIDDLE: Our Campaigns (2 columns) -->
-      <div class="col-12 col-lg-5">
-        <h3 class="footer-title mb-3">Our Campaigns</h3>
+        <!-- CENTER -->
+        <div class="col-12 col-lg-5">
+          <h2 class="footer-heading  ">Our Campaigns</h2>
 
-        <div class="row g-2">
-          <div class="col-12 col-md-6">
-            <ul class="list-unstyled footer-links">
-              <li><a href="#">Flood Relief Fund</a></li>
-              <li><a href="#">Qurbani</a></li>
-              <li><a href="#">Zakat</a></li>
-              <li><a href="#">Fitra</a></li>
-              <li><a href="#">Old Age Homes</a></li>
-              <li><a href="#">Orphanage House</a></li>
-              <li><a href="#">Ambulance Services</a></li>
-              <li><a href="#">Donate to Palestine</a></li>
-              <li><a href="#">Free Mortuary In Karachi</a></li>
-            </ul>
-          </div>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <ul class="footer-links">
+                <li><a href="#">Flood Relief Fund</a></li>
+                <li><a href="#">Qurbani</a></li>
+                <li><a href="#">Zakat</a></li>
+                <li><a href="#">Fitra</a></li>
+                <li><a href="#">Old Age Homes</a></li>
+                <li><a href="#">Orphanage House</a></li>
+                <li><a href="#">Ambulance Services</a></li>
+                <li><a href="#">Donate to Palestine</a></li>
+                <li><a href="#">Free Mortuary In Karachi</a></li>
+              </ul>
+            </div>
 
-          <div class="col-12 col-md-6">
-            <ul class="list-unstyled footer-links">
-              <li><a href="#">Free Mobile Restaurant</a></li>
-              <li><a href="#">Free School</a></li>
-              <li><a href="#">Free IT City</a></li>
-              <li><a href="#">Free Education Karachi</a></li>
-              <li><a href="#">Free Diagnostic Lab</a></li>
-              <li><a href="#">Free Dialysis Center</a></li>
-              <li><a href="#">Free COVID-19 Hospital</a></li>
-              <li><a href="#">Free Dastarkhwan</a></li>
-              <li><a href="#">Free Transport Services</a></li>
-            </ul>
+            <div class="col-12 col-md-6 mt-3 mt-md-0">
+              <ul class="footer-links">
+                <li><a href="#">Free Mobile Restaurant</a></li>
+                <li><a href="#">Free School</a></li>
+                <li><a href="#">Free IT City</a></li>
+                <li><a href="#">Free Education Karachi</a></li>
+                <li><a href="#">Free Diagnostic Lab</a></li>
+                <li><a href="#">Free Dialysis Center</a></li>
+                <li><a href="#">Free COVID-19 Hospital</a></li>
+                <li><a href="#">Free Dastarkhwan</a></li>
+                <li><a href="#">Free Transport Services</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- RIGHT: Newsletter + Contact -->
-      <div class="col-12 col-lg-3">
-        <form class="footer-newsletter mb-4">
-          <div class="input-group">
-            <input type="email" class="form-control" placeholder="Email Address" required>
-            <button class="btn btn-warning fw-bold" type="submit">SUBMIT</button>
-          </div>
-        </form>
+        <!-- RIGHT -->
+        <div class="col-12 col-lg-3">
+          <form class="footer-newsletter">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit">SUBMIT</button>
+          </form>
 
-        <h3 class="footer-title mb-3">Contact Info</h3>
-        <div class="small opacity-90">
-          <div class="mb-2">B-24, Federal B Area Ancholi Block 20<br>Gulberg Town, Karachi</div>
-          <div class="mb-1">(021) 36341059</div>
-          <div><a class="text-white text-decoration-none" href="mailto:info@jdcwelfare.org">info@jdcwelfare.org</a></div>
+          <h3 class="footer-heading-sm">Contact Info</h3>
+
+          <p class="footer-contact">
+            B-24, Federal B Area Ancholi Block 20<br>
+            Gulberg Town, Karachi
+          </p>
+          <p class="footer-contact">(021) 36341059</p>
+          <p class="footer-contact">
+            <a class="text-white text-decoration-none" href="mailto:info@jdcwelfare.org">info@jdcwelfare.org</a>
+          </p>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
