@@ -1,172 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Header</title>
+
+  <!-- Bootstrap 5.3.8 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+  <!-- Bootstrap Icons (optional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
 </head>
+
 <body>
-    
-</body>
-</html>
 
-<body class="boxed_wrapper">
-
-<header class="top-bar">
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
     <div class="container">
-        <div class="column left">
-            <ul class="top-bar-text">
-                <li><i class="icon fa fa-envelope"></i>charitysympathy@info.com</li>
-                <li><i class="icon fa fa-phone"></i>012.9355.121</li>
-            </ul>
-        </div>
-        <div class="column center">
-            <ul class="social">                
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            </ul>
-        </div>
-        <div class="column right">
-            <ul class="login-info">
-                <li><a href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
-                <li><a href="#"><i class="icon fa fa-user"></i>signup</a></li>
-                
-            </ul>
-        </div>
-            
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+        <div class="d-flex flex-wrap align-items-center gap-3">
+          <div class="d-inline-flex align-items-center gap-2">
+            <i class="bi bi-plus-square-fill"></i>
+            <span class="fw-bold">AMBULANCE HELPLINE</span>
+            <span class="fw-bold fs-5 lh-1">1024</span>
+          </div>
 
+          <a class="d-inline-flex align-items-center gap-2" href="#">
+            <i class="bi bi-whatsapp"></i>
+            <span>CONTACT US VIA WHATSAPP</span>
+          </a>
+        </div>
+
+        <a class="d-inline-flex align-items-center gap-2" href="#">
+          <i class="bi bi-heart-fill"></i>
+          <span>BECOME A VOLUNTEER</span>
+        </a>
+      </div>
     </div>
-</header>
+  </div>
 
-<section class="theme_menu stricky">
+  <!-- MAIN NAV -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom" data-bs-theme="light">
     <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="main-logo">
-                    <a href="index.html"><img src="images/logo/logo.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-md-7 menu-column">
-                <nav class="main-menu">
-                    <div class="navbar-header">     
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="navbar-collapse collapse clearfix">
-                        <ul class="navigation clearfix">
-                            <li class="dropdown active"><a href="index.html">Home</a>
-                                <ul>
-                                    <li><a href="index.html">Home One</a></li>
-                                    <li><a href="index-2.html">Home Two</a></li>
-                                    <li><a href="index-3.html">Home Three</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">about us</a>
-                                <ul>
-                                    <li><a href="about.html">About us</a></li>  
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="causes.html">Causes</a>
-                                <ul>
-                                    <li><a href="causes.html">Causes</a></li>
-                                    <li><a href="single-cause.html">Single Cause</a></li>  
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="event.html">Events</a>
-                                <ul>
-                                    <li><a href="event.html">Events</a></li>
-                                    <li><a href="event-details.html">Event Details</a></li>
-                                 </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"> blog </a>
-                                <ul>  
-                                    <li><a href="blog-large.html">Blog With Sidebar</a></li>
-                                    <li><a href="blog-details.html">Blog Single Post</a></li>
-                                 </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">pages</a>
-                                <ul>
-                                    <li><a href="shop.html">Shop</a></li>
-									<li><a href="shop-single.html">Product Detail Page</a></li>
-                                    <li><a href="error.html">404</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">contact</a></li>
-                        </ul>
-						
-                        <ul class="mobile-menu clearfix">
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <!-- Replace with your logo -->
+        <img src="logo.png" alt="Logo" class="brand-logo">
+      </a>
 
-                             <li class="dropdown active"><a href="index.html">Home</a>
-                                <ul>
-                                    <li><a href="index.html">Home One</a></li>
-                                    <li><a href="index-2.html">Home Two</a></li>
-                                    <li><a href="index-3.html">Home Three</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">about us</a>
-                                <ul>
-                                    <li><a href="about.html">About us</a></li>  
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="causes.html">Causes</a>
-                                <ul>
-                                    <li><a href="causes.html">Causes</a></li>
-                                    <li><a href="single-cause.html">Single Cause</a></li>  
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="event.html">Events</a>
-                                <ul>
-                                    <li><a href="event.html">Events</a></li>
-                                    <li><a href="event-details.html">Event Details</a></li>
-                                 </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"> blog </a>
-                                <ul>  
-                                    <li><a href="blog-large.html">Blog With Sidebar</a></li>
-                                    <li><a href="blog-details.html">Blog Single Post</a></li>
-                                 </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">pages</a>
-                                <ul>
-                                    <li><a href="shop.html">Shop</a></li>
-									<li><a href="shop-single.html">Product Detail Page</a></li>
-                                    <li><a href="error.html">404</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <div class="right-column">
-                <div class="right-area">
-                    <div class="nav_side_content">
-                        <div class="search_option">
-                            <button class="search tran3s dropdown-toggle color1_bg" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            <form action="#" class="dropdown-menu" aria-labelledby="searchDropdown">
-                                <input type="text" placeholder="Search...">
-                                <button><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                       </div>
-                   </div>
-                </div>
-                    
-            </div>
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <!-- Menu -->
+        <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0 gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Taqatwar Pakistan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Free IT City</a></li>
+        </ul>
+
+        <!-- Buttons -->
+        <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+          <a class="btn btn-donate" href="#">Donate <i class="bi bi-heart-fill ms-1"></i></a>
+          <a class="btn btn-donate" href="#">Donate USA</a>
+          <a class="btn btn-donate" href="#">Donate CA</a>
         </div>
-                
+      </div>
+    </div>
+  </nav>
 
-   </div> <!-- End of .conatiner -->
-</section>
-  
+  <!-- Page content demo (optional) -->
+  <div class="container py-5">
+    <h1 class="h4">Page Content</h1>
+    <p class="text-muted">Your page content goes here.</p>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS Bundle (required for navbar toggle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          crossorigin="anonymous"></script>
 </body>
 </html>
