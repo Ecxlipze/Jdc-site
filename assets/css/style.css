@@ -62,28 +62,167 @@ body{
 }
 
 
-    /* ================= MOBILE BOTTOM NAV ================= */
-    .mobile-bottom-nav{
-      background: var(--jdc-blue);
-      padding:.35rem 0;
-      z-index:1060;
-    }
-    .mobile-bottom-nav a{
-      text-decoration:none;
-      color:#fff;
-      font-size:.7rem;
-      font-weight:600;
-    }
-    .mobile-bottom-nav i{
-      font-size:1.25rem;
-    }
-    .nav-item-btn{ min-height:52px; }
+  /* ================= MOBILE TOP BAR ================= */
+.mobile-top{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
 
-    /* Space for bottom nav */
-    /* @media (max-width: 991.98px){
-      body{ padding-bottom:72px; }
-    } */
+/* ================= OVERLAY ================= */
+.menu-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 23, 57, 0.55),
+    rgba(23, 23, 57, 0.30)
+  );
+  backdrop-filter: blur(5px);
+}
+.menu-overlay.show{
+  opacity: 1;
+  pointer-events: auto;
+}
 
+/* ================= OFFCANVAS FULL WIDTH ================= */
+#mobileMenu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1050;
+
+  transform: translateX(-100%);
+  transition: transform .28s ease;
+
+  background: linear-gradient(
+    180deg,
+    rgba(23, 23, 57, 0.85),
+    rgba(23, 23, 57, 0.55)
+  );
+  backdrop-filter: blur(8px);
+  color:#fff;
+}
+#mobileMenu.open{ transform: translateX(0); }
+
+/* ================= CLOSE BUTTON (TOP RIGHT ONLY) ================= */
+#closeMenuBtn{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border:0;
+  background: rgba(255,255,255,0.10);
+  color:#fff;
+  font-size: 28px;
+  line-height: 1;
+  padding: 8px 14px;
+  border-radius: 12px;
+}
+#closeMenuBtn:hover{
+  background: rgba(255,255,255,0.18);
+}
+
+/* ================= MENU BODY CENTER (H + V) ================= */
+#mobileMenu .menu-body{
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center; /* vertical center */
+  align-items:center;     /* horizontal center */
+  gap:12px;
+  padding: 70px 20px 90px; /* top for close btn, bottom for nav */
+}
+
+/* Menu items centered */
+#mobileMenu .menu-item,
+#mobileMenu .menu-acc-btn{
+  width: min(520px, 92vw);
+  background: rgba(255,255,255,0.06);
+  color:#fff;
+  border:0;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;  /* center horizontally inside */
+  gap:10px;
+  font-weight:700;
+  text-decoration:none;
+  border-radius:14px;
+}
+#mobileMenu .menu-item:hover,
+#mobileMenu .menu-acc-btn:hover{
+  background: rgba(255,255,255,0.12);
+}
+
+#mobileMenu .menu-item i,
+#mobileMenu .menu-acc-btn i{
+  font-size: 20px;
+}
+
+/* Accordion wrapper centered */
+.menu-accordion{
+  width: min(520px, 92vw);
+}
+
+/* Accordion button layout */
+.menu-acc-btn{
+  width:100%;
+}
+
+/* Arrow right side while content stays centered */
+.menu-acc-btn{
+  position: relative;
+}
+.menu-acc-btn .chev{
+  position:absolute;
+  right: 16px;
+  transition: transform .2s ease;
+}
+
+/* Panel */
+.menu-acc-panel{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+  margin-top: 8px;
+}
+.menu-acc-panel a{
+  display:flex;
+  justify-content:center; /* center text */
+  align-items:center;
+  padding:12px 16px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:14px;
+  background: rgba(255,255,255,0.05);
+  margin: 8px 0;
+}
+.menu-acc-panel a:hover{
+  background: rgba(255,255,255,0.12);
+}
+
+/* accordion open */
+.menu-accordion.open .menu-acc-panel{ max-height: 260px; }
+.menu-accordion.open .chev{ transform: rotate(180deg); }
+
+/* ================= MOBILE BOTTOM NAV ================= */
+.mobile-bottom-nav{
+  background:#181D47;
+  padding:6px 0;
+}
+.mobile-bottom-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+}
+.mobile-bottom-nav i{ font-size:20px; }
     :root { --jdc-blue:#0b2d78; --jdc-blue-2:#1c3f94; }
 
    
