@@ -1,0 +1,38 @@
+ @media (max-width: 767px) {
+    .footer-newsletter{
+        margin-top: 2%;
+      }
+      .footer-left{
+        align-items: center !important;
+        text-align: center;
+      }
+      .footer-heading-sm {
+        text-align: center;
+      }
+      .footer-contact{
+        text-align: center;
+      }
+      .footer-heading {
+        padding-left: 10%;
+      }
+      .footer-links{
+         padding-left: 10%;
+      }
+}
+/* tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* tablets */
+      .footer-newsletter{
+        margin-top: 2%;
+      }
+      .footer-heading{ text-align:left; }
+      .footer-newsletter{ max-width: 100%; }
+}
+/* laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* laptops */
+}
+ /* desktops */
+@media (min-width: 1200px) {
+  /* desktops */
+}
