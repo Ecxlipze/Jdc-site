@@ -10,86 +10,335 @@
         rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
         crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Bootstrap Icons (optional) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+  <style>
+    body{ margin:0; padding:0; }
+
+    :root{ --jdc-blue:#0b3b7a; }
+
+    /* ================= TOP BAR ================= */
+    .topbar{
+      background: var(--jdc-blue);
+      color:#fff;
+      font-size:.9rem;
+    }
+    .topbar a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    /* ================= LOGO ================= */
+    .brand-logo{
+      width:72px;
+      height:72px;
+      object-fit:contain;
+    }
+
+    /* ================= DESKTOP NAV ================= */
+    .navbar .nav-link{ font-weight:600; }
+    .navbar .nav-link.active{ font-weight:800; }
+
+    .btn-donate{
+      background: var(--jdc-blue);
+      color:#fff;
+      border:0;
+      font-weight:700;
+      border-radius:.45rem;
+      padding:.45rem .75rem;
+      white-space:nowrap;
+    }
+
+    /* ================= MOBILE BOTTOM NAV ================= */
+    .mobile-bottom-nav{
+      background: var(--jdc-blue);
+      padding:.35rem 0;
+      z-index:1060;
+    }
+    .mobile-bottom-nav a{
+      text-decoration:none;
+      color:#fff;
+      font-size:.7rem;
+      font-weight:600;
+    }
+    .mobile-bottom-nav i{
+      font-size:1.25rem;
+    }
+    .nav-item-btn{ min-height:52px; }
+
+    /* Space for bottom nav */
+    @media (max-width: 991.98px){
+      body{ padding-bottom:72px; }
+    }
+
+    .footer-jdc{
+    background: radial-gradient(1200px 500px at 70% 10%, rgba(255,255,255,.12), transparent 60%),
+                linear-gradient(90deg, #173a8f, #0b2d78);
+  }
+
+  .footer-logo{
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: rgba(0,0,0,.12);
+    padding: 10px;
+  }
+
+  .footer-title{
+    font-weight: 800;
+    letter-spacing: .2px;
+  }
+
+  .footer-links li{ margin-bottom: .35rem; }
+  .footer-links a{
+    color: rgba(255,255,255,.92);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .95rem;
+  }
+  .footer-links a:hover{ text-decoration: underline; }
+
+  .footer-social a{
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    text-decoration: none;
+  }
+  .footer-social a:hover{ background: rgba(255,255,255,.22); }
+
+  .footer-newsletter .form-control{
+    border: 0;
+    padding: .85rem .9rem;
+    border-radius: .6rem 0 0 .6rem;
+  }
+  .footer-newsletter .btn{
+    border: 0;
+    padding: .85rem 1rem;
+    border-radius: 0 .6rem .6rem 0;
+  }
+  </style>
 </head>
 
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar py-2">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-        <div class="d-flex flex-wrap align-items-center gap-3">
-          <div class="d-inline-flex align-items-center gap-2">
-            <i class="bi bi-plus-square-fill"></i>
-            <span class="fw-bold">AMBULANCE HELPLINE</span>
-            <span class="fw-bold fs-5 lh-1">1024</span>
+<!-- ================= TOP BAR (DESKTOP) ================= -->
+<div class="topbar py-2 d-none d-lg-block">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-3 align-items-center">
+        <strong>🚑 AMBULANCE HELPLINE 1024</strong>
+        <a href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+      </div>
+      <a href="#"><i class="bi bi-heart-fill"></i> Become a Volunteer</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DESKTOP NAV ================= -->
+<nav class="navbar navbar-expand-lg bg-white border-bottom d-none d-lg-flex">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" class="brand-logo">
+    </a>
+
+    <ul class="navbar-nav mx-auto gap-3">
+      <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+
+    <div class="d-flex gap-2">
+      <a class="btn btn-donate">Donate</a>
+      <a class="btn btn-donate">USA</a>
+      <a class="btn btn-donate">CA</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= MOBILE TOP ================= -->
+<div class="bg-white border-bottom d-lg-none">
+  <div class="container py-2 d-flex justify-content-between align-items-center">
+    <img src="logo.png" style="height:55px">
+    <strong>1024</strong>
+  </div>
+</div>
+
+<!-- ================= OFFCANVAS MENU ================= -->
+<div class="offcanvas offcanvas-start" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h5>Menu</h5>
+    <button class="btn-close ms-auto" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+
+    <a class="list-group-item list-group-item-action">
+      <i class="bi bi-house"></i> Home
+    </a>
+
+    <div class="accordion mt-2">
+      <div class="accordion-item border-0">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#camp">
+          <i class="bi bi-megaphone me-2"></i> Campaigns
+        </button>
+        <div id="camp" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <a class="d-block ps-3">Campaign 1</a>
+            <a class="d-block ps-3">Campaign 2</a>
           </div>
-
-          <a class="d-inline-flex align-items-center gap-2" href="#">
-            <i class="bi bi-whatsapp"></i>
-            <span>CONTACT US VIA WHATSAPP</span>
-          </a>
         </div>
+      </div>
+    </div>
 
-        <a class="d-inline-flex align-items-center gap-2" href="#">
-          <i class="bi bi-heart-fill"></i>
-          <span>BECOME A VOLUNTEER</span>
+    <a class="list-group-item list-group-item-action mt-2">
+      <i class="bi bi-telephone"></i> Contact
+    </a>
+
+  </div>
+</div>
+
+<!-- ================= PAGE CONTENT ================= -->
+<div class="container py-5">
+  <h2>Page Content</h2>
+  <p>Scroll to see fixed mobile bottom bar.</p>
+</div>
+
+<!-- ================= MOBILE BOTTOM NAV ================= -->
+<div class="mobile-bottom-nav fixed-bottom d-lg-none">
+  <div class="container px-0">
+    <div class="row text-center g-0">
+
+      <div class="col">
+        <a class="d-flex flex-column align-items-center nav-item-btn">
+          <i class="bi bi-house"></i><span>Home</span>
         </a>
       </div>
+
+      <div class="col">
+        <a href="tel:1024" class="d-flex flex-column align-items-center nav-item-btn">
+          <i class="bi bi-ambulance"></i><span>Helpline</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+           class="d-flex flex-column align-items-center nav-item-btn">
+          <i class="bi bi-list"></i><span>Menu</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="https://wa.me/923001234567"
+           class="d-flex flex-column align-items-center nav-item-btn">
+          <i class="bi bi-whatsapp"></i><span>WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a class="d-flex flex-column align-items-center nav-item-btn">
+          <i class="bi bi-heart-fill"></i><span>Donate</span>
+        </a>
+      </div>
+
     </div>
   </div>
+</div>
 
-  <!-- MAIN NAV -->
-  <nav class="navbar navbar-expand-lg bg-white border-bottom" data-bs-theme="light">
-    <div class="container">
-      <!-- Brand -->
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <!-- Replace with your logo -->
-        <img src="logo.png" alt="Logo" class="brand-logo">
-      </a>
 
-      <!-- Mobile Toggle -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <!-- Collapsible content -->
-      <div class="collapse navbar-collapse" id="mainNav">
-        <!-- Menu -->
-        <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0 gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Taqatwar Pakistan</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Free IT City</a></li>
-        </ul>
 
-        <!-- Buttons -->
-        <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-          <a class="btn btn-donate" href="#">Donate <i class="bi bi-heart-fill ms-1"></i></a>
-          <a class="btn btn-donate" href="#">Donate USA</a>
-          <a class="btn btn-donate" href="#">Donate CA</a>
+<!-- FOOTER -->
+<footer class="footer-jdc text-white pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+
+      <!-- LEFT: Logo + About + Social -->
+      <div class="col-12 col-lg-4">
+        <div class="d-flex gap-3 align-items-start">
+          <img src="logo.png" class="footer-logo" alt="JDC Foundation">
+          <div>
+            <p class="mb-4 small opacity-75">
+              A decade ago, JDC Foundation, a charitable and nonprofit organization journey starting from a
+              small camp established at a densely populated area of Aisha Manzil, Karachi.
+            </p>
+
+            <div class="d-flex gap-3 footer-social">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- MIDDLE: Our Campaigns (2 columns) -->
+      <div class="col-12 col-lg-5">
+        <h3 class="footer-title mb-3">Our Campaigns</h3>
+
+        <div class="row g-2">
+          <div class="col-12 col-md-6">
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Flood Relief Fund</a></li>
+              <li><a href="#">Qurbani</a></li>
+              <li><a href="#">Zakat</a></li>
+              <li><a href="#">Fitra</a></li>
+              <li><a href="#">Old Age Homes</a></li>
+              <li><a href="#">Orphanage House</a></li>
+              <li><a href="#">Ambulance Services</a></li>
+              <li><a href="#">Donate to Palestine</a></li>
+              <li><a href="#">Free Mortuary In Karachi</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Free Mobile Restaurant</a></li>
+              <li><a href="#">Free School</a></li>
+              <li><a href="#">Free IT City</a></li>
+              <li><a href="#">Free Education Karachi</a></li>
+              <li><a href="#">Free Diagnostic Lab</a></li>
+              <li><a href="#">Free Dialysis Center</a></li>
+              <li><a href="#">Free COVID-19 Hospital</a></li>
+              <li><a href="#">Free Dastarkhwan</a></li>
+              <li><a href="#">Free Transport Services</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Newsletter + Contact -->
+      <div class="col-12 col-lg-3">
+        <form class="footer-newsletter mb-4">
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Email Address" required>
+            <button class="btn btn-warning fw-bold" type="submit">SUBMIT</button>
+          </div>
+        </form>
+
+        <h3 class="footer-title mb-3">Contact Info</h3>
+        <div class="small opacity-90">
+          <div class="mb-2">B-24, Federal B Area Ancholi Block 20<br>Gulberg Town, Karachi</div>
+          <div class="mb-1">(021) 36341059</div>
+          <div><a class="text-white text-decoration-none" href="mailto:info@jdcwelfare.org">info@jdcwelfare.org</a></div>
+        </div>
+      </div>
+
     </div>
-  </nav>
-
-  <!-- Page content demo (optional) -->
-  <div class="container py-5">
-    <h1 class="h4">Page Content</h1>
-    <p class="text-muted">Your page content goes here.</p>
   </div>
-
-  <!-- Bootstrap JS Bundle (required for navbar toggle) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-          crossorigin="anonymous"></script>
+</footer>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
