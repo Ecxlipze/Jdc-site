@@ -345,6 +345,42 @@
    
   </div>
  </div>
+
+ <!-- slider -->
+  <section class="profile-section" id="profileSection">
+  <div class="bg-image"></div>
+
+  <div class="wrap">
+    <!-- LEFT IMAGE -->
+    <div class="left-media">
+      <img src="assets/images/header/10001.webp" alt="Left image">
+    </div>
+
+    <!-- CENTER IMAGE -->
+    <div class="center-media">
+      <img src="assets/images/header/10013.png" alt="Center image">
+    </div>
+
+    <!-- RIGHT TEXT -->
+    <div class="right-content">
+      <h2>Zafar Abbas</h2>
+      <p>
+        The Distinguished Eminent Social Worker with courage and selfless devotion
+        to serve mankind, irrespective of caste, creed, sects or beliefs.
+      </p>
+
+      <div class="social">
+        <a href="#">FB</a>
+        <a href="#">X</a>
+        <a href="#">YT</a>
+        <a href="#">IG</a>
+      </div>
+
+      <a class="founder-btn" href="#">FOUNDER PROFILE</a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
  <!-- ======= FOOTER ======= -->
   <footer class="footer-jdc">
@@ -533,6 +569,20 @@
   const campAcc = document.getElementById("campAcc");
   const campBtn = document.getElementById("campBtn");
   campBtn.addEventListener("click", () => campAcc.classList.toggle("open"));
+
+
+
+
+   const section = document.querySelector("#profileSection");
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) section.classList.add("active");
+    },
+    { threshold: 0.4 }
+  );
+
+  observer.observe(section);
 </script>
 
 </body>
