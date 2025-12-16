@@ -187,7 +187,7 @@ body{
 /* Panel */
 .menu-acc-panel{
   max-height: 0;
-  overflow: hidden;
+
   transition: max-height .25s ease;
   margin-top: 8px;
 }
@@ -226,6 +226,40 @@ body{
     :root { --jdc-blue:#0b2d78; --jdc-blue-2:#1c3f94; }
 
    
+/* banner-section */
+.banner-img{
+  background-image: url(../images/header/10001.jpg);
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /* Footer background like screenshot */
     .footer-jdc{
