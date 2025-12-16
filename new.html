@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JS Offcanvas Menu (Centered + Close Right)</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<style>
+/* ================= MOBILE TOP BAR ================= */
+.mobile-top{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+/* ================= OVERLAY ================= */
+.menu-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 23, 57, 0.55),
+    rgba(23, 23, 57, 0.30)
+  );
+  backdrop-filter: blur(5px);
+}
+.menu-overlay.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= OFFCANVAS FULL WIDTH ================= */
+#mobileMenu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1050;
+
+  transform: translateX(-100%);
+  transition: transform .28s ease;
+
+  background: linear-gradient(
+    180deg,
+    rgba(23, 23, 57, 0.85),
+    rgba(23, 23, 57, 0.55)
+  );
+  backdrop-filter: blur(8px);
+  color:#fff;
+}
+#mobileMenu.open{ transform: translateX(0); }
+
+/* ================= CLOSE BUTTON (TOP RIGHT ONLY) ================= */
+#closeMenuBtn{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border:0;
+  background: rgba(255,255,255,0.10);
+  color:#fff;
+  font-size: 28px;
+  line-height: 1;
+  padding: 8px 14px;
+  border-radius: 12px;
+}
+#closeMenuBtn:hover{
+  background: rgba(255,255,255,0.18);
+}
+
+/* ================= MENU BODY CENTER (H + V) ================= */
+#mobileMenu .menu-body{
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center; /* vertical center */
+  align-items:center;     /* horizontal center */
+  gap:12px;
+  padding: 70px 20px 90px; /* top for close btn, bottom for nav */
+}
+
+/* Menu items centered */
+#mobileMenu .menu-item,
+#mobileMenu .menu-acc-btn{
+  width: min(520px, 92vw);
+  background: rgba(255,255,255,0.06);
+  color:#fff;
+  border:0;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;  /* center horizontally inside */
+  gap:10px;
+  font-weight:700;
+  text-decoration:none;
+  border-radius:14px;
+}
+#mobileMenu .menu-item:hover,
+#mobileMenu .menu-acc-btn:hover{
+  background: rgba(255,255,255,0.12);
+}
+
+#mobileMenu .menu-item i,
+#mobileMenu .menu-acc-btn i{
+  font-size: 20px;
+}
+
+/* Accordion wrapper centered */
+.menu-accordion{
+  width: min(520px, 92vw);
+}
+
+/* Accordion button layout */
+.menu-acc-btn{
+  width:100%;
+}
+
+/* Arrow right side while content stays centered */
+.menu-acc-btn{
+  position: relative;
+}
+.menu-acc-btn .chev{
+  position:absolute;
+  right: 16px;
+  transition: transform .2s ease;
+}
+
+/* Panel */
+.menu-acc-panel{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+  margin-top: 8px;
+}
+.menu-acc-panel a{
+  display:flex;
+  justify-content:center; /* center text */
+  align-items:center;
+  padding:12px 16px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:14px;
+  background: rgba(255,255,255,0.05);
+  margin: 8px 0;
+}
+.menu-acc-panel a:hover{
+  background: rgba(255,255,255,0.12);
+}
+
+/* accordion open */
+.menu-accordion.open .menu-acc-panel{ max-height: 260px; }
+.menu-accordion.open .chev{ transform: rotate(180deg); }
+
+/* ================= MOBILE BOTTOM NAV ================= */
+.mobile-bottom-nav{
+  background:#181D47;
+  padding:6px 0;
+}
+.mobile-bottom-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+}
+.mobile-bottom-nav i{ font-size:20px; }
+
+/* ================= BODY LOCK ================= */
+body.menu-open{ overflow:hidden; }
+</style>
+</head>
+
+<body>
+
+<!-- ================= MOBILE TOP ================= -->
+<div class="mobile-top d-lg-none">
+  <div class="container py-2 d-flex justify-content-between align-items-center">
+    <strong>LOGO</strong>
+    <strong>1024</strong>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- OFFCANVAS -->
+<aside id="mobileMenu" aria-hidden="true">
+  <!-- Close only right -->
+  <button id="closeMenuBtn" aria-label="Close Menu">&times;</button>
+
+  <!-- Centered body -->
+  <div class="menu-body">
+
+    <a href="#" class="menu-item">
+      <i class="bi bi-house"></i> Home
+    </a>
+
+    <div class="menu-accordion" id="campAcc">
+      <button class="menu-acc-btn" type="button" id="campBtn">
+        <span class="d-flex align-items-center gap-2 justify-content-center w-100">
+          <i class="bi bi-megaphone"></i> Campaigns
+        </span>
+        <i class="bi bi-chevron-down chev"></i>
+      </button>
+
+      <div class="menu-acc-panel" id="campPanel">
+        <a href="#">Campaign 1</a>
+        <a href="#">Campaign 2</a>
+      </div>
+    </div>
+
+    <a href="#" class="menu-item">
+      <i class="bi bi-person"></i> Founder Profile
+    </a>
+
+    <a href="#" class="menu-item">
+      <i class="bi bi-info-circle"></i> Our Profile
+    </a>
+
+    <a href="#" class="menu-item">
+      <i class="bi bi-telephone"></i> Contact
+    </a>
+
+    <a href="#" class="menu-item">
+      <i class="bi bi-heart-fill"></i> Make a Quick Donation
+    </a>
+
+  </div>
+</aside>
+
+<!-- PAGE CONTENT -->
+<div class="container py-5">
+  <h2>Page Content</h2>
+  <p>Scroll page… Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p style="height: 800px;">(extra height for scrolling)</p>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="mobile-bottom-nav fixed-bottom d-lg-none">
+  <div class="container">
+    <div class="row text-center">
+
+      <div class="col">
+        <a href="#" class="d-flex flex-column align-items-center">
+          <i class="bi bi-house"></i><span>Home</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="tel:1024" class="d-flex flex-column align-items-center">
+          <i class="bi bi-truck"></i><span>Helpline</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a id="openMenuBtn" role="button" class="d-flex flex-column align-items-center">
+          <i class="bi bi-list"></i><span>Menu</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="#" class="d-flex flex-column align-items-center">
+          <i class="bi bi-whatsapp"></i><span>WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="#" class="d-flex flex-column align-items-center">
+          <i class="bi bi-heart-fill"></i><span>Donate</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const body = document.body;
+const menu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("menuOverlay");
+const openBtn = document.getElementById("openMenuBtn");
+const closeBtn = document.getElementById("closeMenuBtn");
+
+function openMenu(){
+  menu.classList.add("open");
+  overlay.classList.add("show");
+  body.classList.add("menu-open");
+  menu.setAttribute("aria-hidden", "false");
+}
+
+function closeMenu(){
+  menu.classList.remove("open");
+  overlay.classList.remove("show");
+  body.classList.remove("menu-open");
+  menu.setAttribute("aria-hidden", "true");
+}
+
+openBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape" && menu.classList.contains("open")) closeMenu();
+});
+
+// Accordion
+const campAcc = document.getElementById("campAcc");
+const campBtn = document.getElementById("campBtn");
+campBtn.addEventListener("click", () => campAcc.classList.toggle("open"));
+</script>
+
+</body>
+</html>
