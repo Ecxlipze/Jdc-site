@@ -4,8 +4,11 @@ body{
 }
 /* header-styling */
  :root { --jdc-blue:#0b3b7a; }
+    body{ margin:0; padding:0; }
 
-    /* Top blue bar */
+    :root{ --jdc-blue:#0b3b7a; }
+
+    /* ================= TOP BAR ================= */
     .topbar{
       background: var(--jdc-blue);
       color:#fff;
@@ -16,16 +19,18 @@ body{
       text-decoration:none;
       font-weight:600;
     }
-    .topbar a:hover{ text-decoration: underline; }
 
-    /* Logo */
+    /* ================= LOGO ================= */
     .brand-logo{
       width:72px;
       height:72px;
       object-fit:contain;
     }
 
-    /* Donate buttons */
+    /* ================= DESKTOP NAV ================= */
+    .navbar .nav-link{ font-weight:600; }
+    .navbar .nav-link.active{ font-weight:800; }
+
     .btn-donate{
       background: var(--jdc-blue);
       color:#fff;
@@ -35,13 +40,165 @@ body{
       padding:.45rem .75rem;
       white-space:nowrap;
     }
-    .btn-donate:hover{ filter:brightness(1.05); color:#fff; }
+.nav-hover {
+  position: relative;
+}
 
-    /* Menu */
-    .navbar .nav-link{ font-weight:600; }
-    .navbar .nav-link.active{ font-weight:800; }
+.nav-hover .nav-link {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+/* ONE underline */
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: #000;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
 
 
+    /* ================= MOBILE BOTTOM NAV ================= */
+    .mobile-bottom-nav{
+      background: var(--jdc-blue);
+      padding:.35rem 0;
+      z-index:1060;
+    }
+    .mobile-bottom-nav a{
+      text-decoration:none;
+      color:#fff;
+      font-size:.7rem;
+      font-weight:600;
+    }
+    .mobile-bottom-nav i{
+      font-size:1.25rem;
+    }
+    .nav-item-btn{ min-height:52px; }
+
+    /* Space for bottom nav */
+    /* @media (max-width: 991.98px){
+      body{ padding-bottom:72px; }
+    } */
+
+    :root { --jdc-blue:#0b2d78; --jdc-blue-2:#1c3f94; }
+
+   
+
+    /* Footer background like screenshot */
+    .footer-jdc{
+      background: linear-gradient(90deg, var(--jdc-blue-2), var(--jdc-blue));
+      color:#fff;
+    }
+
+    /* LEFT column stacked: logo -> paragraph -> social */
+    .footer-left{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .footer-logo-box{
+      background:#1a2f63;
+      border-radius:14px;
+      padding:14px;
+      width:130px;
+      height:130px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom: 14px;
+    }
+    .footer-logo-box img{
+      width:100%;
+      height:auto;
+      object-fit:contain;
+    }
+
+    .footer-text{
+      font-size:14px;
+      line-height:1.7;
+      color:rgba(255,255,255,.85);
+      margin-bottom: 18px;
+      max-width: 360px;
+    }
+
+    .footer-social a{
+      width:34px;
+      height:34px;
+      background:rgba(255,255,255,.15);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      text-decoration:none;
+    }
+    .footer-social a:hover{ background:rgba(255,255,255,.25); }
+
+    .footer-heading{
+      font-weight:800;
+      letter-spacing:.2px;
+      margin-bottom: 18px;
+    }
+
+    .footer-heading-sm{
+      font-weight:800;
+      letter-spacing:.2px;
+      margin-bottom: 14px;
+    }
+
+    /* Campaign links like screenshot (bold-ish, no underline) */
+    .footer-links{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .footer-links li{
+      margin-bottom: 6px;
+    }
+    .footer-links a{
+      color: rgba(255,255,255,.92);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
+    .footer-links a:hover{ text-decoration: underline; }
+
+    /* Newsletter: input + yellow submit */
+    .footer-newsletter{
+      display:flex;
+      width:100%;
+      /* max-width: 320px; */
+      margin-bottom: 22px;
+      margin-top: 30%;
+    }
+    .footer-newsletter input{
+      flex:1;
+      padding:12px 14px;
+      border:none;
+      border-radius:8px 0 0 8px;
+      outline:none;
+    }
+    .footer-newsletter button{
+      background:#f5c21b;
+      border:none;
+      padding:12px 16px;
+      font-weight:800;
+      border-radius:0 8px 8px 0;
+    }
+
+    .footer-contact{
+      font-size:14px;
+      color:rgba(255,255,255,.9);
+      margin-bottom: 8px;
+    }
+
+    /* Small spacing adjustments on mobile */
+   
 
 
 
