@@ -18,6 +18,27 @@
       .footer-links{
          padding-left: 10%;
       }
+      .donation-card{ width: 94%; border-radius: 1.4rem; }
+  .donation-card__content{ padding: 6% 6%; }
+  .donation-card__bg{ display:none; } /* mobile pe clean */
+  .steps{ width: 100%; }
+  .donation-form{ width: 100%; }
+
+  /* badge center on small screens */
+  .donation-badge{
+    /* left: 50%;
+    transform: translate(-50%, -52%); */
+    display: none !important;
+  }
+
+  .btn-next{ padding: 2.6% 6%; }
+  .intl__btn{ padding: 2.8% 10%; }
+   .jdc-hero__rightTop {
+    grid-template-columns: 1fr;
+  }
+  .jdc-hero__avatarWrap {
+    width: 84px;
+  }
 }
 /* tablets */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -27,6 +48,9 @@
       }
       .footer-heading{ text-align:left; }
       .footer-newsletter{ max-width: 100%; }
+      .donation-card__bg{ width: 50%; opacity:.14; }
+  .steps, .donation-form{ width: 92%; }
+  .donation-badge{ left: 8%; }
 }
 /* laptops */
 @media (min-width: 992px) and (max-width: 1199px) {
