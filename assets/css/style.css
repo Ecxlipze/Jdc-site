@@ -165,3 +165,42 @@ body{
   text-decoration: underline;
 }
 
+.about-section {
+  background: #fff;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.section-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.about-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0b4f6c;
+  margin-bottom: 15px;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+  .about-title {
+    font-size: 1.8rem;
+  }
+}
+
