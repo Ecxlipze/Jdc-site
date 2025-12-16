@@ -40,3 +40,77 @@ body{
     /* Menu */
     .navbar .nav-link{ font-weight:600; }
     .navbar .nav-link.active{ font-weight:800; }
+
+
+
+
+
+
+    .campaign-banner {
+  background: linear-gradient(90deg, #002f6c 0%, #0a3f87 70%, #ffffff 100%);
+    background-repeat: no-repeat;
+
+}
+
+.banner-text {
+  padding: 100px 80px;
+}
+
+.banner-text h1 {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .banner-text {
+    padding: 60px 30px;
+    text-align: center;
+  }
+  .banner-text h1 {
+    font-size: 2.5rem;
+  }
+}
+.campaign-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 180px;
+  padding: 20px;
+  background-size: 100% 100%;
+  background-position: center;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+/* Overlay */
+.campaign-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: rgba(19, 30, 95, 0.75); */
+  transition: background 0.3s ease;
+}
+
+/* Text */
+.campaign-card span {
+  position: relative;
+  color: #f5c400;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  z-index: 1;
+}
+
+/* Hover */
+.campaign-card:hover::before {
+  background: rgba(19, 30, 95, 0.55);
+}
+
