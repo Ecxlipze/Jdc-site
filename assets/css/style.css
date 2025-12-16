@@ -204,3 +204,38 @@ body{
   }
 }
 
+.contact-box {
+  padding: 30px 20px;
+  border: 1px solid #e5e5e5;
+  height: 100%;
+}
+
+.contact-box .icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-box h5 {
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.contact-box p {
+  color: #555;
+  margin: 0;
+}
+
+.section-title {
+  font-weight: 800;
+  color: #0b3b7a;
+}
+
+.contact-form .form-control {
+  border-radius: 0;
+}
+
+.contact-img {
+  width: 100%;
+  border-radius: 16px;
+}
+
