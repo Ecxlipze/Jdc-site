@@ -66,85 +66,99 @@
 </nav>
 
 <!-- ================= MOBILE TOP ================= -->
-<div class="bg-white border-bottom d-lg-none">
+<div class="mobile-top d-lg-none">
   <div class="container py-2 d-flex justify-content-between align-items-center">
-    <img src="logo.png" style="height:55px">
+    <strong>LOGO</strong>
     <strong>1024</strong>
   </div>
 </div>
 
-<!-- ================= OFFCANVAS MENU ================= -->
-<div class="offcanvas offcanvas-start" id="mobileMenu">
-  <div class="offcanvas-header">
-    <h5>Menu</h5>
-    <button class="btn-close ms-auto" data-bs-dismiss="offcanvas"></button>
-  </div>
-  <div class="offcanvas-body">
+<!-- Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
 
-    <a class="list-group-item list-group-item-action">
+<!-- OFFCANVAS -->
+<aside id="mobileMenu" aria-hidden="true">
+  <!-- Close only right -->
+  <button id="closeMenuBtn" aria-label="Close Menu">&times;</button>
+
+  <!-- Centered body -->
+  <div class="menu-body">
+
+    <a href="#" class="menu-item">
       <i class="bi bi-house"></i> Home
     </a>
 
-    <div class="accordion mt-2">
-      <div class="accordion-item border-0">
-        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#camp">
-          <i class="bi bi-megaphone me-2"></i> Campaigns
-        </button>
-        <div id="camp" class="accordion-collapse collapse">
-          <div class="accordion-body">
-            <a class="d-block ps-3">Campaign 1</a>
-            <a class="d-block ps-3">Campaign 2</a>
-          </div>
-        </div>
+    <div class="menu-accordion" id="campAcc">
+      <button class="menu-acc-btn" type="button" id="campBtn">
+        <span class="d-flex align-items-center gap-2 justify-content-center w-100">
+          <i class="bi bi-megaphone"></i> Campaigns
+        </span>
+        <i class="bi bi-chevron-down chev"></i>
+      </button>
+
+      <div class="menu-acc-panel" id="campPanel">
+        <a href="#">Campaign 1</a>
+        <a href="#">Campaign 2</a>
       </div>
     </div>
 
-    <a class="list-group-item list-group-item-action mt-2">
+    <a href="#" class="menu-item">
+      <i class="bi bi-person"></i> Founder Profile
+    </a>
+
+    <a href="#" class="menu-item">
+      <i class="bi bi-info-circle"></i> Our Profile
+    </a>
+
+    <a href="#" class="menu-item">
       <i class="bi bi-telephone"></i> Contact
     </a>
 
-  </div>
-</div>
+    <a href="#" class="menu-item">
+      <i class="bi bi-heart-fill"></i> Make a Quick Donation
+    </a>
 
-<!-- ================= PAGE CONTENT ================= -->
+  </div>
+</aside>
+
+<!-- PAGE CONTENT -->
 <div class="container py-5">
   <h2>Page Content</h2>
-  <p>Scroll to see fixed mobile bottom bar.</p>
+  <p>Scroll page… Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p style="height: 800px;">(extra height for scrolling)</p>
 </div>
 
-<!-- ================= MOBILE BOTTOM NAV ================= -->
+<!-- BOTTOM NAV -->
 <div class="mobile-bottom-nav fixed-bottom d-lg-none">
-  <div class="container px-0">
-    <div class="row text-center g-0">
+  <div class="container">
+    <div class="row text-center">
 
       <div class="col">
-        <a class="d-flex flex-column align-items-center nav-item-btn">
+        <a href="#" class="d-flex flex-column align-items-center">
           <i class="bi bi-house"></i><span>Home</span>
         </a>
       </div>
 
       <div class="col">
-        <a href="tel:1024" class="d-flex flex-column align-items-center nav-item-btn">
+        <a href="tel:1024" class="d-flex flex-column align-items-center">
           <i class="bi bi-truck"></i><span>Helpline</span>
         </a>
       </div>
 
       <div class="col">
-        <a data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
-           class="d-flex flex-column align-items-center nav-item-btn">
+        <a id="openMenuBtn" role="button" class="d-flex flex-column align-items-center">
           <i class="bi bi-list"></i><span>Menu</span>
         </a>
       </div>
 
       <div class="col">
-        <a href="https://wa.me/923001234567"
-           class="d-flex flex-column align-items-center nav-item-btn">
+        <a href="#" class="d-flex flex-column align-items-center">
           <i class="bi bi-whatsapp"></i><span>WhatsApp</span>
         </a>
       </div>
 
       <div class="col">
-        <a class="d-flex flex-column align-items-center nav-item-btn">
+        <a href="#" class="d-flex flex-column align-items-center">
           <i class="bi bi-heart-fill"></i><span>Donate</span>
         </a>
       </div>
@@ -152,7 +166,6 @@
     </div>
   </div>
 </div>
-
 
 
 
@@ -273,22 +286,38 @@
   });
 
 //   mobile view
-document.addEventListener("DOMContentLoaded", () => {
-    const offcanvasEl = document.getElementById("mobileMenu");
-    const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl, {
-      backdrop: true,
-      scroll: false
-    });
+const body = document.body;
+const menu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("menuOverlay");
+const openBtn = document.getElementById("openMenuBtn");
+const closeBtn = document.getElementById("closeMenuBtn");
 
-    // If you want to open it manually somewhere:
-    // document.getElementById("openMenuBtn").addEventListener("click", () => offcanvas.show());
+function openMenu(){
+  menu.classList.add("open");
+  overlay.classList.add("show");
+  body.classList.add("menu-open");
+  menu.setAttribute("aria-hidden", "false");
+}
 
-    // Close offcanvas when user clicks any link inside it
-    offcanvasEl.addEventListener("click", (e) => {
-      const link = e.target.closest("a");
-      if (link) offcanvas.hide();
-    });
-  });
+function closeMenu(){
+  menu.classList.remove("open");
+  overlay.classList.remove("show");
+  body.classList.remove("menu-open");
+  menu.setAttribute("aria-hidden", "true");
+}
+
+openBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape" && menu.classList.contains("open")) closeMenu();
+});
+
+// Accordion
+const campAcc = document.getElementById("campAcc");
+const campBtn = document.getElementById("campBtn");
+campBtn.addEventListener("click", () => campAcc.classList.toggle("open"));
 </script>
 
 
