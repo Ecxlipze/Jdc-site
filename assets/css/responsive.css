@@ -51,6 +51,20 @@
       .donation-card__bg{ width: 50%; opacity:.14; }
   .steps, .donation-form{ width: 92%; }
   .donation-badge{ left: 8%; }
+  .wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .center-media {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
 }
 /* laptops */
 @media (min-width: 992px) and (max-width: 1199px) {
