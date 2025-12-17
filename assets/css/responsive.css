@@ -101,6 +101,9 @@
         .grid{ grid-template-columns:1fr; }
       .email-half{ grid-column:auto; max-width:none; }
       label{ text-align:left; }
+      .banner-content h1 {
+    font-size: 1.6rem;
+  }
 }
 /* tablets */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -117,7 +120,14 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
+   /* bananer */
+    .banner-content h1 {
+    font-size: 2rem;
+  }
 
+  .banner-content p {
+    font-size: 1rem;
+  }
   .center-media {
     position: relative;
     left: auto;
