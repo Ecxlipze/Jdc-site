@@ -39,6 +39,55 @@
   .jdc-hero__avatarWrap {
     width: 84px;
   }
+    /* container single column */
+  .jdc-hero__container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: center;
+  }
+
+  /* divider hide */
+  .jdc-hero__divider {
+    display: none;
+  }
+
+  /* left column: avatar first, center */
+  .jdc-hero__col--left {
+    align-items: center; /* flex items center */
+    padding-top: 0;
+  }
+
+  /* avatar center */
+  .jdc-hero__avatarWrap--leftRight {
+    align-self: center;
+    margin: 0 0 14px 0;
+  }
+
+  /* left text center */
+  .jdc-hero__title,
+  .jdc-hero__text {
+    text-align: center;
+  }
+
+  /* right column center */
+  .jdc-hero__col--right,
+  .jdc-hero__rightTop,
+  .jdc-hero__rightCopy,
+  .jdc-hero__eyebrow,
+  .jdc-hero__headline,
+  .jdc-hero__subline {
+    text-align: center;
+  }
+
+  /* right top padding remove on mobile */
+  .jdc-hero__rightTop {
+    padding-top: 0;
+  }
+
+  /* optional: better spacing */
+  .jdc-hero__subline {
+    margin-top: 12px;
+  }
 }
 /* tablets */
 @media (min-width: 768px) and (max-width: 991px) {
