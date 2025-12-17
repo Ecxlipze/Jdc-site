@@ -88,6 +88,19 @@
   .jdc-hero__subline {
     margin-top: 12px;
   }
+    .pay-grid{ grid-template-columns:1fr; }
+      .bank-layout{
+        grid-template-columns:1fr;
+      }
+      .bank-hands{
+        display:none;
+      }
+      .bank-menu-btn{
+        padding:4% 5%;
+      }
+        .grid{ grid-template-columns:1fr; }
+      .email-half{ grid-column:auto; max-width:none; }
+      label{ text-align:left; }
 }
 /* tablets */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -114,6 +127,16 @@
     display: flex;
     justify-content: center;
   }
+    .pay-grid{ grid-template-columns:1fr; }
+      .bank-layout{
+        grid-template-columns:1fr;
+      }
+      .bank-hands{
+        display:none;
+      }
+      .bank-menu-btn{
+        padding:4% 5%;
+      }
 }
 /* laptops */
 @media (min-width: 992px) and (max-width: 1199px) {
