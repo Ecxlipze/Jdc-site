@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Bank Details</title>
+
+  <style>
+    :root{
+      --bank-border:#111;
+      --bank-muted:#666;
+      --bank-active:#e6e6e6;
+      --bank-panel-bg:#f3f3f3;
+      --bank-logo-bg:#0c2d78;
+    }
+
+    /* NO global * selector */
+    html{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+   
+
+    /* wrapper */
+    .bank-wrap{
+      max-width:1180px;
+      margin:2% auto;
+      padding:0 1%;
+    }
+
+    /* heading */
+    .bank-title{
+      margin:0;
+      text-align:center;
+      font-size:22px;
+      font-weight:800;
+    }
+
+    .bank-sub{
+      text-align:center;
+      margin:0.6% auto 1.5%;
+      max-width:980px;
+      color:var(--bank-muted);
+      font-size:12px;
+      line-height:1.35;
+    }
+
+    /* layout */
+    .bank-layout{
+      display:grid;
+      grid-template-columns: 26% 74%;
+      gap:0;
+      align-items:stretch;
+    }
+
+    /* LEFT MENU */
+    .bank-menu{
+      padding:0;
+      background:#fff;
+    }
+
+    .bank-menu-btn{
+      width:100%;
+      border:0;
+      background:#fff;
+      padding:6% 9%;
+      text-align:left;
+      cursor:pointer;
+      font-size:14px;
+      font-weight:600;
+      color:#111;
+      box-sizing:border-box;
+      font-family:inherit;
+    }
+
+    .bank-menu-btn-active{
+      background:var(--bank-active);
+      border-top:1px solid var(--bank-border);
+      border-left:1px solid var(--bank-border);
+      border-bottom:1px solid var(--bank-border);
+      border-right:none;
+
+      /* panel border merge */
+      margin-right:-1px;
+      position:relative;
+      z-index:3;
+    }
+
+    /* RIGHT PANEL */
+    .bank-panel{
+      border:1px solid var(--bank-border);
+      min-height:560px;
+      position:relative;
+      background:var(--bank-panel-bg);
+      overflow:hidden;
+    }
+
+    .bank-panel-inner{
+      padding:4% 4%;
+      height:100%;
+    }
+
+    /* center logo area */
+    .bank-brand{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      gap:2%;
+      margin-top:6%;
+    }
+
+    .bank-logo{
+      width:130px;
+      height:130px;
+      border:0;
+      border-radius:0;
+      background:var(--bank-logo-bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      text-align:center;
+      padding:10px;
+      line-height:1.25;
+    }
+
+    .bank-name{
+      display:none;
+    }
+
+    .bank-details{
+      margin-top:3%;
+      text-align:center;
+      font-size:15px;
+      line-height:1.65;
+      color:#111;
+    }
+
+    .bank-details-bold{
+      font-weight:900;
+    }
+
+    /* hands image */
+    .bank-hands{
+      position:absolute;
+      right:-2%;
+      top:22%;
+      width:380px;
+      opacity:.95;
+      pointer-events:none;
+      filter:grayscale(100%);
+    }
+
+    /* responsive */
+    @media (max-width: 980px){
+      .bank-layout{
+        grid-template-columns:1fr;
+      }
+      .bank-hands{
+        display:none;
+      }
+      .bank-menu-btn{
+        padding:4% 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bank-wrap">
+    <h1 class="bank-title">All Bank Details</h1>
+
+    <div class="bank-sub">
+      If you’re having trouble by paying donation or don’t want to put your details right above then we’ve mentioned our banking
+      details running all across the globe. You can check what’s fits your need. Have a blessed life!
+    </div>
+
+    <div class="bank-layout">
+      <div class="bank-menu" id="bankMenu"></div>
+
+      <div class="bank-panel">
+        <div class="bank-panel-inner">
+          <div class="bank-brand">
+            <div class="bank-logo" id="bankLogo">BANK</div>
+            <div class="bank-name" id="bankTitle">Bank</div>
+          </div>
+
+          <div class="bank-details" id="bankDetails"></div>
+        </div>
+
+        <img class="bank-hands" id="bankHandsImg" src="assets/images/header/hand-img.webp" alt="hands" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const bankData = [
+      {
+        key: "CHASE BANK",
+        title: "CHASE BANK",
+        details: [
+          ["Title of Account", "JDC WELFARE USA"],
+          ["Account No", "1234567890"],
+          ["Routing No", "021000021"],
+          ["Regd. Charity No", "0000000"],
+        ],
+      },
+      {
+        key: "BANK OF SCOTLAND",
+        title: "BANK OF SCOTLAND",
+        details: [
+          ["Title of Account", "JDC WELFARE UK"],
+          ["Account No", "26483666"],
+          ["Sort Code No", "802260"],
+          ["Regd. Charity No", "1207234"],
+        ],
+      },
+      {
+        key: "RBC Royal Bank",
+        title: "RBC ROYAL BANK",
+        details: [
+          ["Title of Account", "JDC WELFARE CANADA"],
+          ["Account No", "1033984"],
+          ["Transit No", "09987"],
+          ["Bank No", "003"],
+          ["Email Transfer", "canada@jdcwelfare.org"],
+        ],
+      }
+    ];
+
+    const bankMenuEl = document.getElementById("bankMenu");
+    const bankLogoEl = document.getElementById("bankLogo");
+    const bankTitleEl = document.getElementById("bankTitle");
+    const bankDetailsEl = document.getElementById("bankDetails");
+
+    function bankRenderMenu(activeKey){
+      bankMenuEl.innerHTML = "";
+
+      for (let i = 0; i < bankData.length; i++){
+        const b = bankData[i];
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = b.key;
+
+        btn.className = "bank-menu-btn";
+        if (b.key === activeKey) btn.className += " bank-menu-btn-active";
+
+        btn.addEventListener("click", function(){
+          bankSelect(b.key);
+        });
+
+        bankMenuEl.appendChild(btn);
+      }
+    }
+
+    function bankRenderDetails(bank){
+      bankLogoEl.textContent = bank.title.toUpperCase();
+      bankTitleEl.textContent = bank.title;
+
+      let html = "";
+      for (let i = 0; i < bank.details.length; i++){
+        const row = bank.details[i];
+        const k = row[0];
+        const v = row[1];
+        html += "<div><span class='bank-details-bold'>" + k + ":</span> " + v + "</div>";
+      }
+      bankDetailsEl.innerHTML = html;
+    }
+
+    function bankSelect(key){
+      let found = bankData[0];
+      for (let i = 0; i < bankData.length; i++){
+        if (bankData[i].key === key){
+          found = bankData[i];
+          break;
+        }
+      }
+      bankRenderMenu(found.key);
+      bankRenderDetails(found);
+    }
+
+    bankSelect("BANK OF SCOTLAND");
+  </script>
+</body>
+</html>
