@@ -1716,4 +1716,13 @@
   line-height: 1.9;
   color: #555;
 }
+.healthcare-list {
+  line-height: 1.9;
+  color: #444;
+  padding-left: 18px;
+}
+
+.healthcare-list li {
+  margin-bottom: 8px;
+}
 
