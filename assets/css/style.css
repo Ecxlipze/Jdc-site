@@ -1726,3 +1726,15 @@
   margin-bottom: 8px;
 }
 
+.grid-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Optional hover effect */
+.grid-img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
