@@ -576,156 +576,195 @@
   
    border-radius: 15px 15px 15px 15px;
 }
-
-.all-image-4{
-  background-image: url(../images/header//10004.jpg);
-  background-size: 100% 100%;
-  
-   border-radius: 15px 15px 15px 15px;
-}
-
-.all-image-4{
-  background-image: url(../images/header//10004.jpg);
-  background-size: 100% 100%;
-  
-   border-radius: 15px 15px 15px 15px;
-}
-
-.all-image-4{
-  background-image: url(../images/header//10004.jpg);
-  background-size: 100% 100%;
-  
-   border-radius: 15px 15px 15px 15px;
-}
-
-.all-image-4{
-  background-image: url(../images/header//10004.jpg);
-  background-size: 100% 100%;
-  
-   border-radius: 15px 15px 15px 15px;
-}
-
-
-/* slider */
-.profile-section {
+/* Common card style */
+[class^="all-image-"] {
   position: relative;
-  min-height: 520px;
-  background: #2d1b55; /* initial bg color */
+  height: 250px;          /* same height for first row */
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
+  margin-bottom: 20px;
+  
 }
 
-.bg-image {
+/* Overlay layer */
+[class^="all-image-"]::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: url("bg.jpg") center/cover no-repeat;
-  opacity: 0;
-  transition: opacity 1s ease;
+
   z-index: 1;
 }
 
-.wrap {
+/* Center text */
+[class^="all-image-"] .all-image-1-text,
+[class^="all-image-"] .all-image-2-text,
+[class^="all-image-"] .all-image-3-text,
+[class^="all-image-"] .all-image-4-text,
+[class^="all-image-"] .all-image-5-text,
+[class^="all-image-"] .all-image-6-text,
+[class^="all-image-"] .all-image-7-text,
+[class^="all-image-"] .all-image-8-text,
+[class^="all-image-"] .all-image-9-text,
+[class^="all-image-"] .all-image-10-text,
+[class^="all-image-"] .all-image-11-text,
+[class^="all-image-"] .all-image-12-text {
   position: relative;
   z-index: 2;
-  width: min(1100px, 92%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+  text-align: center;
+  color: white;
+   background: linear-gradient(
+  rgba(63, 50, 85, 0.85),
+  rgba(63, 50, 85, 0.85)
+);
 }
 
-/* Left side: image + center image layered */
-.left-media {
+[class^="all-image-"] h1 {
+  margin: 0;
+}
+
+.all-image-4{
+  background-image: url(../images/header//10004.jpg);
+  background-size: 100% 100%;
+  
+   border-radius: 15px 15px 15px 15px;
+}
+
+.all-image-4{
+  background-image: url(../images/header//10004.jpg);
+  background-size: 100% 100%;
+  
+   border-radius: 15px 15px 15px 15px;
+}
+
+.all-image-4{
+  background-image: url(../images/header//10004.jpg);
+  background-size: 100% 100%;
+  
+   border-radius: 15px 15px 15px 15px;
+}
+
+.all-image-4{
+  background-image: url(../images/header//10004.jpg);
+  background-size: 100% 100%;
+  
+   border-radius: 15px 15px 15px 15px;
+}
+
+
+/* FULL WIDTH GRADIENT SECTION */
+.founder-hero{
+  background: linear-gradient(to right, #272b6a, #272b6a, #422163);
+  padding: 70px 0;
   position: relative;
+
+  /* IMPORTANT: allow center image to go outside section */
+  overflow: visible;
+}
+
+.hero-wrap{
+  width: min(1220px, 92%);
+  margin: 0 auto;
+}
+
+/* WHITE CARD */
+.hero-card{
+  position: relative;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,.08);
+  min-height: 320px;
+
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
+
+  /* keep images clean inside card */
+  overflow: hidden;
+}
+
+/* left & right must be behind the center image */
+.hero-left,
+.hero-right{
+  position: relative;
+  z-index: 2;
+}
+
+/* center image stays on top and can overflow */
+.hero-center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  /* move center image up so it goes outside top/bottom */
+  transform: translate(-50%, -50%) translateY(-35px);
+
+  z-index: 10;         /* on top */
+  pointer-events: none;
+}
+
+.hero-center img{
+  width: 280px;
+  max-width: 34vw;
+  display: block;
+}
+
+/* LEFT IMAGE - slide in */
+.hero-left{
+  height: 100%;
   min-height: 320px;
   opacity: 0;
-  transform: translateX(-80px);
-  transition: all 1s ease;
+  transform: translateX(-160px);
+  transition: transform 1s ease, opacity 1s ease;
 }
 
-.left-media img {
+.hero-left img{
   width: 100%;
-  max-width: 520px;
-  display: block;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2.5px);
+  transform: scale(1.06);
 }
 
-/* Center image overlay */
-.center-media {
-  position: absolute;
-  left: 46%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
+/* MERGE FADE (towards center) */
+.hero-left::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.55) 55%,
+    rgba(255,255,255,1) 78%
+  );
 }
 
-.center-media img {
-  width: 260px;
-  max-width: 40vw;
-  display: block;
-}
-
-/* Right side: TEXT content */
-.right-content {
+/* RIGHT CONTENT - slide in */
+.hero-right{
+  padding: 36px 44px;
   opacity: 0;
-  transform: translateX(80px);
-  transition: all 1s ease;
-  color: #fff;
+  transform: translateX(160px);
+  transition: transform 1s ease, opacity 1s ease;
 }
 
-.right-content h2 {
-  margin: 0 0 10px;
-  font-size: 26px;
-}
-
-.right-content p {
-  margin: 0 0 16px;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.social {
-  display: flex;
-  gap: 10px;
-  margin: 12px 0 18px;
-}
-
-.social a {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  text-decoration: none;
-}
-
-.founder-btn {
-  display: inline-block;
-  padding: 10px 14px;
-  border: 1px solid rgba(255,255,255,0.5);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-/* Active on scroll */
-.profile-section.active .bg-image {
-  opacity: 1;
-}
-
-.profile-section.active .left-media,
-.profile-section.active .right-content {
+/* On scroll active */
+.founder-hero.active .hero-left,
+.founder-hero.active .hero-right{
   opacity: 1;
   transform: translateX(0);
 }
 
-
-
+/* Optional: make merge feel smoother behind center */
+.hero-right{
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff 35%);
+}
 
 
 
