@@ -925,10 +925,13 @@
 
 .banner-text h1 {
   color: #fff;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
 }
-
+.banner-text h3 {
+  color: #fff;
+  font-weight: 700;
+}
 .banner-image img {
   width: 100%;
   height: 100%;
@@ -1106,3 +1109,33 @@
   border-radius: 16px;
 }
 
+.section-img {
+  width: 100%;
+  height: 400px;
+  border-radius: 16px;
+  /* object-fit: cover; */
+}
+
+.section-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0b4f6c;
+}
+
+.section-paragraph {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .section-heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .section-paragraph {
+    text-align: center;
+  }
+}
