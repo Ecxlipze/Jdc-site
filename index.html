@@ -14,6 +14,8 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
   <style>
@@ -47,10 +49,10 @@
     <ul class="navbar-nav mx-auto gap-3 nav-hover">
       <span class="nav-underline"></span>
       <li class="nav-item "><a class="nav-link active" style="color:  #006D41;" href="#">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
     </ul>
 
     <div class="d-flex gap-2">
@@ -82,7 +84,7 @@
   <button id="closeMenuBtn" aria-label="Close Menu">&times;</button>
 
   <div class="menu-body">
-    <a href="index.html" class="menu-item"><i class="bi bi-house"></i> Home</a>
+    <a href="index.html" class="menu-item"><i class="bi "></i> Home</a>
 
     <!-- <div class="menu-accordion" id="campAcc">
       <button class="menu-acc-btn" type="button" id="campBtn">
@@ -98,10 +100,12 @@
       </div>
     </div> -->
 
-    <a href="#" class="menu-item"><i class="bi bi-person"></i> Founder Profile</a>
-    <a href="#" class="menu-item"><i class="bi bi-info-circle"></i> Our Profile</a>
-    <a href="contact.html" class="menu-item"><i class="bi bi-telephone"></i> Contact</a>
-    <a href="#" class="menu-item"><i class="bi bi-heart-fill"></i> Make a Quick Donation</a>
+    <a href="project.html" class="menu-item"><i class="bi "></i> Project</a>
+    <a href="blogs.html" class="menu-item"><i class="bi "></i> Blog</a>
+    <a href="about.html" class="menu-item"><i class="bi "></i> About</a>
+    <a href="contact.html" class="menu-item"><i class="bi "></i> Contact</a>
+
+    <a href="donate.html" class="menu-item"><i class="bi "></i> Donate</a>
   </div>
 </aside>
 
@@ -493,13 +497,15 @@
           to serve mankind, irrespective of caste, creed, sects or beliefs.
         </p>
 
-        <div class="hero-social">
-          <a href="#" aria-label="Facebook" class="ico">f</a>
-          <a href="#" aria-label="Twitter/X" class="ico">x</a>
-          <a href="#" aria-label="YouTube" class="ico">▶</a>
-          <a href="#" aria-label="TikTok" class="ico">t</a>
-          <a href="#" aria-label="Instagram" class="ico">◎</a>
-        </div>
+       <div class="hero-social">
+  <a href="#" aria-label="Facebook" class="ico"><i class="fa-brands fa-facebook-f"></i></a>
+  <a href="#" aria-label="LinkedIn" class="ico"><i class="fa-brands fa-linkedin-in"></i></a>
+  <a href="#" aria-label="Twitter/X" class="ico"><i class="fa-brands fa-x-twitter"></i></a>
+  <a href="#" aria-label="YouTube" class="ico"><i class="fa-brands fa-youtube"></i></a>
+  <a href="#" aria-label="TikTok" class="ico"><i class="fa-brands fa-tiktok"></i></a>
+  <a href="#" aria-label="Instagram" class="ico"><i class="fa-brands fa-instagram"></i></a>
+</div>
+
 
         <a class="hero-btn" href="#">FOUNDER PROFILE</a>
       </div>
@@ -604,16 +610,16 @@
     <div class="row text-center">
 
       <div class="col">
-        <a href="#" class="d-flex flex-column align-items-center">
+        <a href="index.html" class="d-flex flex-column align-items-center">
           <i class="bi bi-house"></i><span>Home</span>
         </a>
       </div>
 
-      <div class="col">
+      <!-- <div class="col">
         <a href="tel:1024" class="d-flex flex-column align-items-center">
           <i class="bi bi-truck"></i><span>Helpline</span>
         </a>
-      </div>
+      </div> -->
 
       <div class="col">
         <a id="openMenuBtnBottom" role="button" class="d-flex flex-column align-items-center">
@@ -628,7 +634,7 @@
       </div>
 
       <div class="col">
-        <a href="#" class="d-flex flex-column align-items-center">
+        <a href="donate.html" class="d-flex flex-column align-items-center">
           <i class="bi bi-heart-fill"></i><span>Donate</span>
         </a>
       </div>
