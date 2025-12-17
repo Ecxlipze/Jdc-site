@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project</title>
+
+    <!-- Bootstrap 5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR (DESKTOP) ================= -->
+    <div class="topbar py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-3 align-items-center">
+                    <strong>🚑 AMBULANCE HELPLINE 1024</strong>
+                    <a href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                </div>
+                <a href="#"><i class="bi bi-heart-fill"></i> Become a Volunteer</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= DESKTOP NAV ================= -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom d-none d-lg-flex sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <!-- replace with your logo -->
+                <img src="../assets/images/header/logo.png" class="brand-logo" alt="Logo">
+            </a>
+
+            <ul class="navbar-nav mx-auto gap-3 nav-hover">
+                <span class="nav-underline"></span>
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+
+            <div class="d-flex gap-2">
+                <a class="btn btn-donate" href="#">Donate</a>
+                <a class="btn btn-donate" href="#">USA</a>
+                <a class="btn btn-donate" href="#">CA</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= MOBILE TOP ================= -->
+    <div class="mobile-top d-lg-none">
+        <div class="container py-2 d-flex justify-content-between align-items-center">
+            <img src="../assets/images/header/logo.png" alt="Logo">
+            <div class="d-flex align-items-center gap-3">
+                <strong>1024</strong>
+                <button id="openMenuBtn" class="btn btn-sm btn-outline-dark" type="button">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- OFFCANVAS -->
+    <aside id="mobileMenu" aria-hidden="true">
+        <button id="closeMenuBtn" aria-label="Close Menu">&times;</button>
+
+        <div class="menu-body">
+            <a href="#" class="menu-item"><i class="bi bi-house"></i> Home</a>
+
+            <div class="menu-accordion" id="campAcc">
+                <button class="menu-acc-btn" type="button" id="campBtn">
+                    <span class="d-flex align-items-center gap-2 justify-content-center w-100">
+                        <i class="bi bi-megaphone"></i> Campaigns
+                    </span>
+                    <i class="bi bi-chevron-down chev"></i>
+                </button>
+
+                <div class="menu-acc-panel" id="campPanel">
+                    <a href="#">Campaign 1</a>
+                    <a href="#">Campaign 2</a>
+                </div>
+            </div>
+
+            <a href="#" class="menu-item"><i class="bi bi-person"></i> Founder Profile</a>
+            <a href="#" class="menu-item"><i class="bi bi-info-circle"></i> Our Profile</a>
+            <a href="#" class="menu-item"><i class="bi bi-telephone"></i> Contact</a>
+            <a href="#" class="menu-item"><i class="bi bi-heart-fill"></i> Make a Quick Donation</a>
+        </div>
+    </aside>
+
+    <!-- ================= PAGE CONTENT ================= -->
+
+
+
+    <!-- Campaigns Banner -->
+    <section class="campaign-banner" style="background-image: url(../assets/images/10001.webp);">
+        <div class="container-fluid px-0">
+            <div class="row g-0 align-items-center">
+
+                <!-- Left Content -->
+                <div class="col-lg-6 banner-text">
+                    <h3>Syed Zafar Abbas Made the Impossible Possible</h3>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Image + Heading Section -->
+    <section class="image-heading-section py-5">
+        <div class="container">
+
+            <!-- Top Row -->
+            <div class="row align-items-center g-4 mb-4">
+
+                <!-- Image -->
+                <div class="col-lg-6">
+                    <img src="../assets/images/blog-pages/impossible.jpg" alt="Section Image" class="section-img">
+                </div>
+
+                <!-- Heading -->
+                <div class="col-lg-6">
+                    <h2 class="section-heading">
+                  Syed Zafar Abbas Made the Impossible Possible
+                    </h2>
+                </div>
+
+            </div>
+
+            <!-- Bottom Paragraph -->
+            <div class="row">
+                <div class="col-12">
+                    <section class="certification-section py-5">
+                        <div class="container">
+
+                            <!-- <h2 class="mb-3">
+      Get Hurry Up to Stand Up with Google’s Emerging Tech Certifications
+    </h2> -->
+
+                            <!-- <p class="text-muted mb-2">
+      <em>(For females only)</em>
+    </p> -->
+
+                            <p>
+                              JDC and Zafar Abbas held an opening ceremony for one of their free dialysis center in Karachi. This center was one out of the planned 50 centers in Karachi and was inaugurated on 20th March 2022. The ceremony was attended by various political, religious, and media celebrities, including Sindh’s governor Imran Ismail and the famous TV host Waseem Badami. </p>
+
+                            <p>
+                              The opening ceremony started with a recitation of the Quran, followed by a recitation of Naat. Zafar Abbas was the first person to address the ceremony, and he shared information and the operations of the new dialysis center. At that time, JDC was working on sixteen dialysis centers.</p>
+
+                            <p>
+                            The new dialysis center, like all the rest, provides free-of-cost dialysis services, and there are also plans of introducing MRI, Ultrasound, and X-RAY on the first floor. The center was named ‘JDC GFS Dialysis Center.’</p>
+
+                            <!-- <ul class="mb-4">
+      <li>Data Analytics</li>
+      <li>Digital Marketing &amp; E-commerce</li>
+      <li>IT Support</li>
+      <li>Project Management</li>
+      <li>UX Design</li>
+      <li>Cybersecurity</li>
+    </ul> -->
+
+                            <p>
+                             The center aims to provide services to people in New Karachi, Surjani, Mangopir, and close-by areas. The free dialysis center has left no expenses and provides the most refined services for free of cost. </p>
+                            <p>
+                              The governor appreciated the efforts of JDC and Zafar Abbas and also promised to nominate him for the civil awards. Waseem Badami was also adamant about the efforts done by JDC. </p>
+
+                            <p>
+                              The JDC foundation has been working to improve the livelihood in Karachi and all across the country in all ways possible. From free dastarkhwan to free ration distribution JDC has volunteers working in all the departments of welfare. The dialysis centers are another component in the long list of welfare activities by JDC through which they want to help the citizens.</p>
+
+                            <p>
+                               The JDC dialysis centers are equipped with the latest technology and state-of-the-art facilities that will provide impeccable services with respect to the people in need. These services are free, and thus JDC has not even installed a billing counter in the center.</p>
+
+                               <p>The foundation aims to complete most of the fifty centers within the next two years. The fact that Pakistan has more than seventeen million diabetes patients and an income of less than 1300 USD makes affording treatment for such nuanced diseases relatively hard. This is one of the reasons why JDC has been so vocal about this issue because there are millions of patients in this country who need all the support they can get.</p>
+                               <p>The JDC foundation steps have been commended nationwide and internationally which has given a boost to the morale of the foundation, and they will be aiming to provide even more services to the people of this country in the welfare department.</p>
+
+                            <!-- <p class="fw-semibold">
+      Apply soon — this is a limited-time offer. Reserve your seat in digital
+      innovation and turn your skills into success in the digital economy.
+    </p> -->
+
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <!-- ======= FOOTER ======= -->
+    <footer class="footer-jdc">
+        <div class="container py-5">
+            <div class="row gy-4 align-items-start">
+
+                <!-- LEFT -->
+                <div class="col-12 col-lg-4">
+                    <div class="footer-left">
+
+                        <!-- Logo -->
+                        <div class="footer-logo-box">
+                            <img src="../assets/images/header/logo.png" alt="JDC">
+                        </div>
+
+                        <!-- Paragraph -->
+                        <p class="footer-text">
+                            A decade ago, JDC Foundation, a charitable and nonprofit organization journey starting from
+                            a
+                            small camp established at a densely populated area of Aisha Manzil, Karachi.
+                        </p>
+
+                        <!-- Social -->
+                        <div class="footer-social d-flex gap-3">
+                            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CENTER -->
+                <div class="col-12 col-lg-5">
+                    <h2 class="footer-heading  ">Our Campaigns</h2>
+
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <ul class="footer-links">
+                                <li><a href="#">Flood Relief Fund</a></li>
+                                <li><a href="#">Qurbani</a></li>
+                                <li><a href="#">Zakat</a></li>
+                                <li><a href="#">Fitra</a></li>
+                                <li><a href="#">Old Age Homes</a></li>
+                                <li><a href="#">Orphanage House</a></li>
+                                <li><a href="#">Ambulance Services</a></li>
+                                <li><a href="#">Donate to Palestine</a></li>
+                                <li><a href="#">Free Mortuary In Karachi</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-md-6 mt-3 mt-md-0">
+                            <ul class="footer-links">
+                                <li><a href="#">Free Mobile Restaurant</a></li>
+                                <li><a href="#">Free School</a></li>
+                                <li><a href="#">Free IT City</a></li>
+                                <li><a href="#">Free Education Karachi</a></li>
+                                <li><a href="#">Free Diagnostic Lab</a></li>
+                                <li><a href="#">Free Dialysis Center</a></li>
+                                <li><a href="#">Free COVID-19 Hospital</a></li>
+                                <li><a href="#">Free Dastarkhwan</a></li>
+                                <li><a href="#">Free Transport Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="col-12 col-lg-3">
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit">SUBMIT</button>
+                    </form>
+
+                    <h3 class="footer-heading-sm">Contact Info</h3>
+
+                    <p class="footer-contact">
+                        B-24, Federal B Area Ancholi Block 20<br>
+                        Gulberg Town, Karachi
+                    </p>
+                    <p class="footer-contact">(021) 36341059</p>
+                    <p class="footer-contact">
+                        <a class="text-white text-decoration-none"
+                            href="mailto:info@jdcwelfare.org">info@jdcwelfare.org</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- end-of-page-content -->
+    <!-- ================= MOBILE BOTTOM NAV ================= -->
+    <div class="mobile-bottom-nav fixed-bottom d-lg-none">
+        <div class="container">
+            <div class="row text-center">
+
+                <div class="col">
+                    <a href="#" class="d-flex flex-column align-items-center">
+                        <i class="bi bi-house"></i><span>Home</span>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="tel:1024" class="d-flex flex-column align-items-center">
+                        <i class="bi bi-truck"></i><span>Helpline</span>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a id="openMenuBtnBottom" role="button" class="d-flex flex-column align-items-center">
+                        <i class="bi bi-list"></i><span>Menu</span>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="d-flex flex-column align-items-center">
+                        <i class="bi bi-whatsapp"></i><span>WhatsApp</span>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="d-flex flex-column align-items-center">
+                        <i class="bi bi-heart-fill"></i><span>Donate</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+
+</html>
