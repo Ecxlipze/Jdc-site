@@ -23,7 +23,7 @@
 
     /* ================= DESKTOP NAV ================= */
     .navbar .nav-link{ font-weight:600;
-    color: #ffffff; }
+    color: black; }
     .btn-donate{
       background: #006D41 !important;
       color:#fff;
@@ -35,7 +35,7 @@
       
     }
   .navbar{
-    background-color: rgba(64,64,64);
+    background-color:#FFFFFF;
   }
     /* underline hover animation */
     .nav-hover { position: relative; }
@@ -658,6 +658,62 @@
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
+}
+.our-pro{
+  display: flex;
+  justify-content: center;
+ 
+}
+.btn-pro{
+ background-image: linear-gradient(45deg, #272b6a, #432063) ! Important;
+
+ 
+ 
+}
+.btn-pro a{
+color: white !important;
+ font-size: 25px !important;
+ font-weight: 600 !important;
+ text-decoration: none;
+ padding: 7px 25px 7px 25px !important;
+}
+.container-fluid-line {
+  position: relative;
+}
+
+.line-wrap {
+  position: relative;
+}
+
+.our-media-line {
+  border: 7px solid #432063;
+  border-radius: 30px;
+  width: 32%;
+  z-index: 9999;
+}
+
+/* jab fixed ho */
+.our-media-line.is-fixed {
+  position: fixed;
+  /* left: 0;        */
+}
+.our-media{
+  display: flex;
+  justify-content: center;
+ 
+}
+.btn-media{
+ background-image: linear-gradient(45deg, #272b6a, #432063) ! Important;
+
+ 
+ 
+}
+.btn-media a{
+color: white !important;
+ font-size: 25px !important;
+ font-weight: 600 !important;
+ text-decoration: none;
+ padding: 7px 25px 7px 25px !important;
 }
 /* Common card style */
 [class^="all-image-"] {
