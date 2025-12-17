@@ -48,7 +48,7 @@
 
     <ul class="navbar-nav mx-auto gap-3 nav-hover">
       <span class="nav-underline"></span>
-      <li class="nav-item "><a class="nav-link active" style="color:  #006D41;" href="#">Home</a></li>
+      <li class="nav-item "><a class="nav-link active"  href="#">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
       <li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
       <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -355,7 +355,11 @@
     </div>
   </div>
 </section>
-
+<div class="container-fluid my-3 ">
+  <div class="our-pro">
+    <div class="btn btn-pro "><a href="project.html">Our Projects</a></div>
+  </div>
+</div>
 
 <!-- all-images-section -->
  <div class="container-fluid mt-5 ">
@@ -513,6 +517,18 @@
   </div>
 </section>
 
+<div class="container-fluid my-3 ">
+  <div class="our-media">
+    <div class="btn btn-media "><a href="project.html">Media Updates</a></div>
+  </div>
+</div>
+
+<!-- line -->
+ <div class="container-fluid container-fluid-line my-5">
+  <div class="line-wrap">
+    <div class="our-media-line"></div>
+  </div>
+</div>
 
 <!-- FOOTER -->
  <!-- ======= FOOTER ======= -->
@@ -649,9 +665,60 @@
 <script src="assets/js/index-typically-word-change.js" ></script>
 <script src="assets/js/form.js" ></script>
 <script>
-  
+   const line = document.querySelector(".our-media-line");
+  const wrap = document.querySelector(".line-wrap");
 
+  let originalTop = 0;
+  let fixedTop = 0;
+  let fixedLeft = 0;
+  let activated = false;
+  let placeholder = null;
 
+  function calcOriginal() {
+    originalTop = wrap.getBoundingClientRect().top + window.scrollY;
+  }
+
+  calcOriginal();
+  window.addEventListener("resize", calcOriginal);
+
+  // Activate only when user reaches this div (first time / whenever comes into view)
+  const io = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      activated = true;
+
+      // current position in viewport (so it doesn't jump when fixed)
+      const rect = line.getBoundingClientRect();
+      fixedTop = rect.top;
+      fixedLeft = rect.left;
+
+      // create placeholder once (to prevent layout jump when line becomes fixed)
+      if (!placeholder) {
+        placeholder = document.createElement("div");
+        placeholder.style.height = rect.height + "px";
+        wrap.insertBefore(placeholder, line);
+      }
+    }
+  }, { threshold: 0.1 });
+
+  io.observe(wrap);
+
+  window.addEventListener("scroll", () => {
+    if (!activated) return;
+
+    const y = window.scrollY;
+
+    // If user is ABOVE original position -> line should follow (fixed) overlaying content
+    if (y < originalTop) {
+      line.classList.add("is-fixed");
+      line.style.top = fixedTop + "px";
+      line.style.left = fixedLeft + "px"; // keeps same horizontal position
+    } else {
+      // As soon as user comes back DOWN to original place -> reset to normal position
+      line.classList.remove("is-fixed");
+      line.style.top = "";
+      line.style.left = "";
+    }
+  });
       //  slider
 
      const hero = document.querySelector("#founderHero");
