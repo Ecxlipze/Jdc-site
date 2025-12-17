@@ -1572,3 +1572,33 @@
       pointer-events:none;
       filter:grayscale(100%);
     }
+
+    .section-img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.section-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0b4f6c;
+}
+
+.section-paragraph {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .section-heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .section-paragraph {
+    text-align: center;
+  }
+}
