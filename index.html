@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Header + Cards</title>
+  <title>index</title>
 
   <!-- Bootstrap 5.3.8 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -115,65 +115,164 @@
 
 <!-- Donation Section -->
 <section class=" container donation-section">
-  <div class="donation-wrap">
+  <div class="donation-wrap"  >
 
     <!-- Circle Badge (half banner + half card) -->
     <div class="donation-badge">
-      <div class="donation-badge__inner">
+      <div class="donation-badge__inner  "  >
         <span>YOUR DONATION<br>IS JUST A<br>CLICK AWAY</span>
       </div>
     </div>
 
     <!-- Card -->
-    <div class="  donation-card ">
-      <!-- right side background image (hands) -->
-      <div class="donation-card__bg" aria-hidden="true"></div>
+    <div class="  donation-card "  >
+       <div class="wrap">
+    <div class="topbar">Donate USA</div>
 
-      <div class="donation-card__content">
-        <h2 class="donation-title">
-          <span class="donation-title__blue">You</span>
-          <span class="donation-title__muted">Help We Donate</span>
-        </h2>
+    <div class="stepper" aria-label="Donation steps">
+      <div class="step active" data-step-ind="1">1. Amount</div>
+      <div class="step" data-step-ind="2">2. Details</div>
+      <div class="step" data-step-ind="3">3. Payment</div>
+    </div>
 
-        <!-- Steps -->
-        <div class="steps" role="navigation" aria-label="Donation Steps">
-          <div class="step is-active">1. Amount</div>
-          <div class="step">2. Details</div>
-          <div class="step">3. Payment</div>
+    <div class="panel">
+      <!-- STEP 1 -->
+      <section id="step1">
+        <div class="field">
+          <label>Enter Your Contribution Amount (PKR) <span style="color:#b00020">*</span></label>
+          <input id="amount" type="number" min="1" />
+          <div class="error" id="amountErr">Please enter a valid amount.</div>
         </div>
 
-        <form class="donation-form">
-          <label class="field-label">
-            Enter Your Contribution Amount (PKR)
-          </label>
+        <div class="field">
+          <label>Donations For <span style="color:#b00020">*</span></label>
+          <select id="donationFor">
+            <option value="">Choose an option</option>
+            <option value="education">Education</option>
+            <option value="medical">Medical</option>
+            <option value="food">Food</option>
+          </select>
+          <div class="error" id="donationForErr">Please select an option.</div>
+        </div>
 
-          <div class="field-row">
-            <input class="field" type="number" placeholder="" required>
+        <!-- Step 1: Next + bullet loader (like radio circle) -->
+        <div class="actions">
+          <button class="btn" id="next1" type="button">Next &nbsp;»</button>
+          <div class="bullet-loader" id="bulletLoader1" aria-label="Loading"></div>
+        </div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section id="step2" class="hidden left-label">
+        <div class="grid">
+          <div class="field">
+            <label>First name <span style="color:#b00020">*</span></label>
+            <input id="firstName" type="text" />
+            <div class="error" id="firstNameErr">Please enter first name.</div>
           </div>
 
-          <div class="field-row">
-            <label for="">Donations For</label>
-            <select class="field" required>
-              <option value="">Choose an option</option>
-              <option>Option 1</option>
-              <option>Option 2</option>
-            </select>
+          <div class="field">
+            <label>Phone <span style="color:#b00020">*</span></label>
+            <input id="phone" type="text" />
+            <div class="error" id="phoneErr">Please enter phone.</div>
           </div>
 
-          <div class="actions">
-            <button class="btn-next" type="submit">Next »</button>
+          <div class="field email-half">
+            <label>Email address <span style="color:#b00020">*</span></label>
+            <input id="email" type="email" />
+            <div class="error" id="emailErr">Please enter a valid email.</div>
           </div>
+        </div>
 
-          <div class="intl">
+        <div class="actions between" style="margin-top:22px;">
+          <button class="btn" id="back2" type="button">«&nbsp; Back</button>
+          <button class="btn" id="next2" type="button">Next &nbsp;»</button>
+        </div>
+      </section>
+
+      <!-- STEP 3 (MATCH YOUR IMAGE) -->
+      <section id="step3" class="hidden left-label">
+        <div class="center-title">Your Donation</div>
+
+        <div class="amount-row">
+          <div class="left">Donation Amount</div>
+          <div class="right" id="donationAmountText">Rs0.00</div>
+        </div>
+
+        <div class="pay-box">
+          <div class="pay-grid">
+            <!-- Card 1 -->
+            <div class="pay-card" role="button" tabindex="0" data-pay="cards">
+              <div class="radio"></div>
+              <div class="txt">
+                pay via cards, accounts, wallets
+                <span style="margin-left:8px;">
+                  <img alt="VISA" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='18'><rect width='56' height='18' fill='white'/><text x='8' y='13' font-size='12' font-family='Arial' fill='%230b2f7a'>VISA</text></svg>">
+                  <img alt="Mastercard" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='76' height='18'><rect width='76' height='18' fill='white'/><circle cx='32' cy='9' r='6' fill='%23e33'/><circle cx='44' cy='9' r='6' fill='%23f9b300'/><text x='8' y='13' font-size='10' font-family='Arial' fill='%23333'>Mastercard</text></svg>">
+                </span>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="pay-card" role="button" tabindex="0" data-pay="ubl">
+              <div class="radio"></div>
+              <div class="txt">
+                UBL Credit/Debit cards
+                <span style="margin-left:8px;">
+                  <img alt="UBL" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='18'><rect width='56' height='18' fill='white'/><text x='10' y='13' font-size='12' font-family='Arial' fill='%23333'>UBL</text></svg>">
+                </span>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="pay-card list" role="button" tabindex="0" data-pay="alfa">
+              <div class="radio" style="margin-top:4px;"></div>
+              <div class="pay-list">
+                <div class="pay-item">
+                  <div class="dot"></div>
+                  <span>Credit/Debit Card</span>
+                </div>
+                <div class="pay-item">
+                  <div class="dot"></div>
+                  <span class="mini-icon"></span>
+                  <span>Alfa Wallet</span>
+                </div>
+                <div class="pay-item">
+                  <div class="dot"></div>
+                  <span class="mini-icon"></span>
+                  <span>Bank Alfalah Account</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-bar">
+          <div class="check" aria-hidden="true"></div>
+          <div class="warn">Please fill in all fields under Donor Details correctly before checking out.</div>
+          <button class="fix-btn" type="button">Fix Invalid Fields</button>
+        </div>
+
+        <div class="actions between" style="margin-top:18px;">
+          <button class="btn" id="back3" type="button">«&nbsp; Back</button>
+          <button class="btn" id="submit" type="button">Confirm</button>
+        </div>
+      </section>
+      <div class="intl">
             <div class="intl__label">FOR INTERNATIONAL DONORS</div>
             <a class="intl__btn" href="#">
               Click to Donate
               <span class="intl__icons" aria-hidden="true">💳 🌐</span>
             </a>
           </div>
-        </form>
       </div>
-    </div>
+      
+       </div>
+
+          
+        
+      <!-- </div>
+    </div> -->
 
   </div>
 </section>
@@ -524,63 +623,11 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="assets/js/mobile-menu.js" ></script>
+<script src="assets/js/index-typically-word-change.js" ></script>
+<script src="assets/js/form.js" ></script>
 <script>
-  // desktop underline hover
-  const nav = document.querySelector(".nav-hover");
-  const underline = document.querySelector(".nav-underline");
-  const links = document.querySelectorAll(".nav-hover .nav-link");
-
-  function moveUnderline(el) {
-    const rect = el.getBoundingClientRect();
-    const navRect = nav.getBoundingClientRect();
-    underline.style.width = rect.width + "px";
-    underline.style.left = (rect.left - navRect.left) + "px";
-    underline.style.opacity = "1";
-  }
-
-  links.forEach(link => link.addEventListener("mouseenter", () => moveUnderline(link)));
-
-  nav.addEventListener("mouseleave", () => {
-    underline.style.opacity = "0";
-    underline.style.width = "0";
-  });
-
-  // mobile offcanvas
-  const body = document.body;
-  const menu = document.getElementById("mobileMenu");
-  const overlay = document.getElementById("menuOverlay");
-  const openBtnTop = document.getElementById("openMenuBtn");
-  const openBtnBottom = document.getElementById("openMenuBtnBottom");
-  const closeBtn = document.getElementById("closeMenuBtn");
-
-  function openMenu(){
-    menu.classList.add("open");
-    overlay.classList.add("show");
-    body.style.overflow = "hidden";
-    menu.setAttribute("aria-hidden", "false");
-  }
-
-  function closeMenu(){
-    menu.classList.remove("open");
-    overlay.classList.remove("show");
-    body.style.overflow = "";
-    menu.setAttribute("aria-hidden", "true");
-  }
-
-  openBtnTop?.addEventListener("click", openMenu);
-  openBtnBottom?.addEventListener("click", openMenu);
-  closeBtn.addEventListener("click", closeMenu);
-  overlay.addEventListener("click", closeMenu);
-
-  document.addEventListener("keydown", (e) => {
-    if(e.key === "Escape" && menu.classList.contains("open")) closeMenu();
-  });
-
-  // accordion
-  const campAcc = document.getElementById("campAcc");
-  const campBtn = document.getElementById("campBtn");
-  campBtn.addEventListener("click", () => campAcc.classList.toggle("open"));
+  
 
 
       //  slider
@@ -595,54 +642,7 @@
   );
 
   obs.observe(hero);
-  // random avater logo 
-  const words = [
-    "Free Homes",
-    "Food",
-    "Clothes",
-    "Education",
-    "Healthcare",
-    "Hope"
-  ];
-
-  const textEl = document.getElementById("jdc-rotate-word");
-
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  const typingSpeed = 90;
-  const deletingSpeed = 50;
-  const holdAfterType = 1200;
-  const holdAfterDelete = 400;
-
-  function typeEffect() {
-    const currentWord = words[wordIndex];
-
-    if (!isDeleting) {
-      // Typing
-      textEl.textContent = currentWord.substring(0, charIndex + 1);
-      charIndex++;
-
-      if (charIndex === currentWord.length) {
-        setTimeout(() => (isDeleting = true), holdAfterType);
-      }
-    } else {
-      // Deleting
-      textEl.textContent = currentWord.substring(0, charIndex - 1);
-      charIndex--;
-
-      if (charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(() => {}, holdAfterDelete);
-      }
-    }
-
-    setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
-  }
-
-  typeEffect();
+ 
 </script>
 
 </body>
