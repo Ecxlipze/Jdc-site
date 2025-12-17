@@ -925,10 +925,13 @@
 
 .banner-text h1 {
   color: #fff;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
 }
-
+.banner-text h3 {
+  color: #fff;
+  font-weight: 700;
+}
 .banner-image img {
   width: 100%;
   height: 100%;
@@ -1276,7 +1279,9 @@
     }
 
     @media (max-width: 760px){
-    
+      .grid{ grid-template-columns:1fr; }
+      .email-half{ grid-column:auto; max-width:none; }
+      label{ text-align:left; }
     }
 
     .hidden{ display:none; }
@@ -1324,7 +1329,16 @@
       align-items:start;
     }
     @media (max-width: 900px){
-    
+      .pay-grid{ grid-template-columns:1fr; }
+      .bank-layout{
+        grid-template-columns:1fr;
+      }
+      .bank-hands{
+        display:none;
+      }
+      .bank-menu-btn{
+        padding:4% 5%;
+      }
     }
     .pay-card{
       background:var(--navy);
