@@ -694,7 +694,7 @@ color: white !important;
 
 /* jab fixed ho */
 .our-media-line.is-fixed {
-  position: fixed;
+  position: fixed !important ;
   /* left: 0;        */
 }
 .our-media{
