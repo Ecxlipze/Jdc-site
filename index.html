@@ -185,12 +185,17 @@
   </div>
  </div>
  <!-- end this container -->
-  <section class="jdc-hero">
+<section class="jdc-hero">
   <div class="jdc-hero__bg" aria-hidden="true"></div>
 
   <div class="jdc-hero__container">
     <!-- Left -->
-    <div class="jdc-hero__col">
+    <div class="jdc-hero__col jdc-hero__col--left">
+      <!-- ✅ Avatar moved here + aligned right -->
+      <div class="jdc-hero__avatarWrap jdc-hero__avatarWrap--leftRight">
+        <img class="jdc-hero__avatar" src="assets/images/header/ce-img.webp" alt="Profile" />
+      </div>
+
       <h2 class="jdc-hero__title">Help is Our Main Goal</h2>
       <p class="jdc-hero__text">
         JDC Welfare Organization is a non-profit organization dedicated to serve humanity
@@ -200,16 +205,12 @@
       </p>
     </div>
 
-    <!-- Divider (hidden on mobile) -->
+    <!-- Divider -->
     <div class="jdc-hero__divider" aria-hidden="true"></div>
 
     <!-- Right -->
     <div class="jdc-hero__col jdc-hero__col--right">
       <div class="jdc-hero__rightTop">
-        <div class="jdc-hero__avatarWrap">
-          <img class="jdc-hero__avatar" src="assets/images/header/ce-img.webp" alt="Profile" />
-        </div>
-
         <div class="jdc-hero__rightCopy">
           <div class="jdc-hero__eyebrow">ABOUT JDC FOUNDATION (NGO)</div>
           <h3 class="jdc-hero__headline">
@@ -230,11 +231,12 @@
       </div>
 
       <h4 class="jdc-hero__subline">
-        We are Distributing <span>Free Homes</span>
-      </h4>
+  We are Distributing <span id="jdc-rotate-word">Free Homes</span>
+</h4>
     </div>
   </div>
 </section>
+
 
 <!-- all-images-section -->
  <div class="container-fluid mt-5 ">
@@ -593,6 +595,54 @@
   );
 
   obs.observe(hero);
+  // random avater logo 
+  const words = [
+    "Free Homes",
+    "Food",
+    "Clothes",
+    "Education",
+    "Healthcare",
+    "Hope"
+  ];
+
+  const textEl = document.getElementById("jdc-rotate-word");
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typingSpeed = 90;
+  const deletingSpeed = 50;
+  const holdAfterType = 1200;
+  const holdAfterDelete = 400;
+
+  function typeEffect() {
+    const currentWord = words[wordIndex];
+
+    if (!isDeleting) {
+      // Typing
+      textEl.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentWord.length) {
+        setTimeout(() => (isDeleting = true), holdAfterType);
+      }
+    } else {
+      // Deleting
+      textEl.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(() => {}, holdAfterDelete);
+      }
+    }
+
+    setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+  }
+
+  typeEffect();
 </script>
 
 </body>
