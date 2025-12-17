@@ -237,31 +237,38 @@
 </section>
 
 <!-- all-images-section -->
- <div class="container-fluid">
+ <div class="container-fluid mt-5 ">
   <div class="row">
     <div class="col-md-3  col-sm-4">
       <div class="all-image-1">
-        <div class="all-image-1-text">
+      
+            <div class="all-image-1-text">
           <h1>125</h1>
           <h1>Ambulances</h1>
+    
         </div>
+        
       </div>
     </div>
     <div class="col-md-3 col-sm-4 ">
       <div class="all-image-2">
+        
         <div class="all-image-2-text">
           <h1>20</h1>
           <h1>Dastarkhuan</h1>
         </div>
+        
       </div>
     </div>
     <div class="col-md-3 col-sm-4 ">
       <div class="all-image-3">
+        
         <div class="all-image-3-text">
           <h1>
 4
 </h1>
           <h1>Old Age Home</h1>
+       
         </div>
       </div>
     </div>
@@ -347,39 +354,42 @@
  </div>
 
  <!-- slider -->
-  <section class="profile-section" id="profileSection">
-  <div class="bg-image"></div>
-
-  <div class="wrap">
-    <!-- LEFT IMAGE -->
-    <div class="left-media">
-      <img src="assets/images/header/10001.webp" alt="Left image">
-    </div>
-
-    <!-- CENTER IMAGE -->
-    <div class="center-media">
-      <img src="assets/images/header/10013.png" alt="Center image">
-    </div>
-
-    <!-- RIGHT TEXT -->
-    <div class="right-content">
-      <h2>Zafar Abbas</h2>
-      <p>
-        The Distinguished Eminent Social Worker with courage and selfless devotion
-        to serve mankind, irrespective of caste, creed, sects or beliefs.
-      </p>
-
-      <div class="social">
-        <a href="#">FB</a>
-        <a href="#">X</a>
-        <a href="#">YT</a>
-        <a href="#">IG</a>
+ <!-- SLIDER / FOUNDER SECTION -->
+<section class="founder-hero" id="founderHero">
+  <div class="hero-wrap">
+    <div class="hero-card">
+      <!-- Left image (blurred like screenshot) -->
+      <div class="hero-left">
+        <img src="assets/images/header/10001.webp" alt="Left image">
       </div>
 
-      <a class="founder-btn" href="#">FOUNDER PROFILE</a>
+      <!-- Center overlay person -->
+      <div class="hero-center">
+        <img src="assets/images/header/10013.png" alt="Founder">
+      </div>
+
+      <!-- Right content -->
+      <div class="hero-right">
+        <h2>Zafar Abbas</h2>
+        <p>
+          The Distinguished Eminent Social Worker with courage and selfless devotion
+          to serve mankind, irrespective of caste, creed, sects or beliefs.
+        </p>
+
+        <div class="hero-social">
+          <a href="#" aria-label="Facebook" class="ico">f</a>
+          <a href="#" aria-label="Twitter/X" class="ico">x</a>
+          <a href="#" aria-label="YouTube" class="ico">▶</a>
+          <a href="#" aria-label="TikTok" class="ico">t</a>
+          <a href="#" aria-label="Instagram" class="ico">◎</a>
+        </div>
+
+        <a class="hero-btn" href="#">FOUNDER PROFILE</a>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- FOOTER -->
  <!-- ======= FOOTER ======= -->
@@ -571,18 +581,18 @@
   campBtn.addEventListener("click", () => campAcc.classList.toggle("open"));
 
 
+      //  slider
 
+     const hero = document.querySelector("#founderHero");
 
-   const section = document.querySelector("#profileSection");
-
-  const observer = new IntersectionObserver(
+  const obs = new IntersectionObserver(
     ([entry]) => {
-      if (entry.isIntersecting) section.classList.add("active");
+      if (entry.isIntersecting) hero.classList.add("active");
     },
-    { threshold: 0.4 }
+    { threshold: 0.35 }
   );
 
-  observer.observe(section);
+  obs.observe(hero);
 </script>
 
 </body>
