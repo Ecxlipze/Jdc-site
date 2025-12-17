@@ -1276,9 +1276,7 @@
     }
 
     @media (max-width: 760px){
-      .grid{ grid-template-columns:1fr; }
-      .email-half{ grid-column:auto; max-width:none; }
-      label{ text-align:left; }
+    
     }
 
     .hidden{ display:none; }
@@ -1326,16 +1324,7 @@
       align-items:start;
     }
     @media (max-width: 900px){
-      .pay-grid{ grid-template-columns:1fr; }
-      .bank-layout{
-        grid-template-columns:1fr;
-      }
-      .bank-hands{
-        display:none;
-      }
-      .bank-menu-btn{
-        padding:4% 5%;
-      }
+    
     }
     .pay-card{
       background:var(--navy);
