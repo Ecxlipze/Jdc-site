@@ -16,27 +16,25 @@
 
     /* ================= LOGO ================= */
     .brand-logo{
-      width:72px;
-      height:72px;
+      width:90px;
+      max-height:112px;
+      height:auto;
       object-fit:contain;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
     }
 
     /* ================= DESKTOP NAV ================= */
-    .navbar .nav-link{ font-weight:600;
-    color: black; }
+    .navbar .nav-link{ font-weight:600; }
     .btn-donate{
-      background: #006D41 !important;
+      background: var(--jdc-blue);
       color:#fff;
       border:0;
       font-weight:700;
       border-radius:.45rem;
       padding:.45rem .75rem;
       white-space:nowrap;
-      
     }
-  .navbar{
-    background-color:#FFFFFF;
-  }
+
     /* underline hover animation */
     .nav-hover { position: relative; }
     .nav-hover .nav-link { position: relative; padding-bottom: 8px; }
@@ -51,15 +49,59 @@
       transition: all 0.25s ease;
     }
 
-    /* ================= MOBILE TOP ================= */
+    /* ================= MOBILE TOP (sticky) ================= */
     .mobile-top{
       background:#fff;
       border-bottom:1px solid #ddd;
       position: sticky;
       top: 0;
-      z-index: 1030;
+      z-index: 1060;
+      overflow: visible;
     }
-    .mobile-top img{ height:44px; width:auto; }
+
+    /* ✅ MOBILE: logo + typing text side-by-side */
+    .mobile-top .container{
+  position: relative;
+  padding-top: 16px;
+
+  /* ✅ logo ki jagah banayen taa-ke text overlap na ho */
+  padding-left: 95px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+   .mobile-top .mobile-brand{
+  position: absolute;   /* was relative */
+  top: -10px;           /* adjust as you like */
+  left: 0;
+  z-index: 2;
+}
+   .mobile-top .mobile-brand img{
+  width: 90px;
+  max-height: 112px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+}
+
+    /* ✅ hide old right block (1024 + top menu btn) */
+    .mobile-top .mobile-right{
+      display: none !important;
+    }
+
+    .jdc-hero__subline{
+      margin: 0;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.15;
+      color: #111;
+      flex: 1 1 auto;
+    }
+    #jdc-rotate-word{
+      color: var(--jdc-blue);
+    }
 
     /* ================= OVERLAY ================= */
     .menu-overlay{
@@ -72,9 +114,10 @@
       background: rgba(0,0,0,.45);
       backdrop-filter: blur(4px);
     }
+    /* ✅ when open: show overlay BUT don't block scrolling */
     .menu-overlay.show{
       opacity: 1;
-      pointer-events: auto;
+      pointer-events: none; /* important: body scroll works */
     }
 
     /* ================= OFFCANVAS FULL WIDTH ================= */
@@ -95,8 +138,8 @@
 
     #closeMenuBtn{
       position: absolute;
-      top: 14px;
-      right: 14px;
+          top: 11%;
+    right: 7%;
       border:0;
       background: rgba(255,255,255,0.10);
       color:#fff;
@@ -170,7 +213,7 @@
     /* ================= MOBILE BOTTOM NAV ================= */
     .mobile-bottom-nav{
       background:#181D47;
-      /* padding:8px 0; */
+      padding:8px 0;
       z-index: 1030;
     }
     .mobile-bottom-nav a{
@@ -181,6 +224,36 @@
     }
     .mobile-bottom-nav i{ font-size:20px; }
 
+    /* optional: give page some breathing room from bottom nav */
+    .page-wrap{ padding-bottom: 90px; }
+
+    /* demo hero */
+    .hero{
+      min-height: 240px;
+      background: linear-gradient(135deg, rgba(11,59,122,.10), rgba(11,59,122,.02));
+      border-bottom: 1px solid #eee;
+      display:flex;
+      align-items:center;
+    }
+
+    /* =====================================================
+       ✅ DESKTOP: fixed header + floating logo outside height
+       ===================================================== */
+    .navbar.d-lg-flex{
+      position: sticky;
+      top: 0;
+      z-index: 1060;
+      overflow: visible;
+    }
+    .navbar.d-lg-flex .container{
+      position: relative;
+      padding-top: 18px;
+    }
+    .navbar.d-lg-flex .navbar-brand{
+      position: absolute;
+      top: -13px;
+      left: 0;
+    }
    /* .donation-banner img{
   width:100%;
   height:auto;
@@ -1266,6 +1339,7 @@ color: white !important;
       --bank-active:#e6e6e6;
       --bank-panel-bg:#f3f3f3;
       --bank-logo-bg:#0c2d78;
+      --jdc-blue:#0b3b7a;
     }
    /* keep border-box everywhere WITHOUT using * selector */
 .wrap, .topbar, .stepper, .step, .panel, .field, label, input, select,
