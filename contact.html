@@ -172,12 +172,13 @@
 </section>
 
 <!-- Contact Form Section -->
+<!-- Contact Form Section -->
 <section class="contact-form-section py-5 bg-light">
   <div class="container">
-    
+
     <div class="text-center mb-5">
       <h2 class="section-title">
-        WANT TO BECOME A VOLUNTEER OR COMPLAIN?
+         BECOME A VOLUNTEER 
       </h2>
     </div>
 
@@ -188,43 +189,108 @@
         <form class="contact-form">
 
           <div class="row g-3">
+
+            <!-- Full Name -->
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="First Name">
+              <input type="text" class="form-control" placeholder="Full Name" required>
             </div>
+
+            <!-- Email -->
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Last Name">
+              <input type="email" class="form-control" placeholder="Email Address" required>
             </div>
 
+            <!-- Phone -->
+            <div class="col-md-6">
+              <input type="tel" class="form-control" placeholder="Phone Number" required>
+            </div>
+
+            <!-- Region / City -->
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Region / City">
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="col-md-6">
+              <input type="date" class="form-control" placeholder="Date of Birth">
+            </div>
+
+            <!-- Gender -->
+            <div class="col-md-6">
+              <select class="form-select">
+                <option selected disabled>Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer Not to Say</option>
+              </select>
+            </div>
+
+            <!-- Areas of Interest -->
             <div class="col-12">
-              <input type="tel" class="form-control" placeholder="Contact Number">
+              <label class="form-label fw-bold">Areas of Interest / Program Preference</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="ration">
+                <label class="form-check-label" for="ration">Ration</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="education">
+                <label class="form-check-label" for="education">Education</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="medical">
+                <label class="form-check-label" for="medical">Medical</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="all">
+                <label class="form-check-label" for="all">All</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="other">
+                <label class="form-check-label" for="other">Other</label>
+              </div>
             </div>
 
+            <!-- Availability -->
             <div class="col-12">
-              <input type="email" class="form-control" placeholder="Email Address">
+              <select class="form-select">
+                <option selected disabled>Availability</option>
+                <option>Weekdays</option>
+                <option>Weekends</option>
+                <option>Flexible</option>
+                <option>Specific Hours</option>
+              </select>
             </div>
 
+            <!-- Previous Experience -->
             <div class="col-12">
-              <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+              <textarea class="form-control" rows="3" placeholder="Previous Volunteer Experience"></textarea>
             </div>
 
+            <!-- Additional Skills -->
+            <div class="col-12">
+              <textarea class="form-control" rows="3" placeholder="Additional Comments / Skills"></textarea>
+            </div>
+
+            <!-- Submit -->
             <div class="col-12">
               <button type="submit" class="btn btn-primary px-5" style="background-color: #0b3b7a;">
                 Submit
               </button>
             </div>
-          </div>
 
+          </div>
         </form>
       </div>
 
       <!-- Image -->
       <div class="col-lg-4">
-        <img src="assets/images/contact.webp" alt="Contact" class="contact-img">
+        <img src="assets/images/contact.webp" alt="Contact" class="contact-img img-fluid">
       </div>
 
     </div>
   </div>
 </section>
+
 
 <!-- Map Section -->
 <section class="map-section">
@@ -373,188 +439,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/mobile-menu.js" ></script>
 
-<script>
-    const steps = {
-      1: document.getElementById("step1"),
-      2: document.getElementById("step2"),
-      3: document.getElementById("step3"),
-    };
-    const stepIndicators = [...document.querySelectorAll(".step[data-step-ind]")];
 
-    function setActiveStep(n){
-      Object.values(steps).forEach(s => s.classList.add("hidden"));
-      steps[n].classList.remove("hidden");
-      stepIndicators.forEach(el => el.classList.toggle("active", Number(el.dataset.stepInd) === n));
-    }
-
-    function showErr(id, show){
-      const el = document.getElementById(id);
-      if(!el) return;
-      el.classList.toggle("show", !!show);
-    }
-
-    function validateStep1(){
-      const amount = Number(document.getElementById("amount").value);
-      const donationFor = document.getElementById("donationFor").value;
-
-      const amountOk = Number.isFinite(amount) && amount > 0;
-      const donationForOk = donationFor !== "";
-
-      showErr("amountErr", !amountOk);
-      showErr("donationForErr", !donationForOk);
-
-      return amountOk && donationForOk;
-    }
-
-    function validateStep2(){
-      const firstName = document.getElementById("firstName").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("email").value.trim();
-
-      const firstOk = firstName.length >= 2;
-      const phoneOk = phone.length >= 6;
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-      showErr("firstNameErr", !firstOk);
-      showErr("phoneErr", !phoneOk);
-      showErr("emailErr", !emailOk);
-
-      return firstOk && phoneOk && emailOk;
-    }
-
-    function formatPKR(n){
-      const v = Number(n || 0);
-      return "Rs" + v.toFixed(2);
-    }
-
-    // STEP 1: Next -> show bullet loader -> go Step 2
-    document.getElementById("next1").addEventListener("click", () => {
-      if(!validateStep1()) return;
-
-      const nextBtn = document.getElementById("next1");
-      const loader = document.getElementById("bulletLoader1");
-
-      nextBtn.disabled = true;
-      loader.style.display = "inline-block";
-
-      setTimeout(() => {
-        loader.style.display = "none";
-        nextBtn.disabled = false;
-        setActiveStep(2);
-      }, 900);
-    });
-
-    // STEP 2
-    document.getElementById("back2").addEventListener("click", () => setActiveStep(1));
-    document.getElementById("next2").addEventListener("click", () => {
-      if(!validateStep2()) return;
-
-      // push amount to step3
-      const amount = Number(document.getElementById("amount").value);
-      document.getElementById("donationAmountText").textContent = formatPKR(amount);
-
-      setActiveStep(3);
-    });
-
-    // STEP 3
-    document.getElementById("back3").addEventListener("click", () => setActiveStep(2));
-    document.getElementById("submit").addEventListener("click", () => {
-      alert("Confirmed (demo). Hook payment gateway here.");
-    });
-
-
-
-    // click bank
-     const bankData = [
-      {
-        key: "CHASE BANK",
-        title: "CHASE BANK",
-        details: [
-          ["Title of Account", "JDC WELFARE USA"],
-          ["Account No", "1234567890"],
-          ["Routing No", "021000021"],
-          ["Regd. Charity No", "0000000"],
-        ],
-      },
-      {
-        key: "BANK OF SCOTLAND",
-        title: "BANK OF SCOTLAND",
-        details: [
-          ["Title of Account", "JDC WELFARE UK"],
-          ["Account No", "26483666"],
-          ["Sort Code No", "802260"],
-          ["Regd. Charity No", "1207234"],
-        ],
-      },
-      {
-        key: "RBC Royal Bank",
-        title: "RBC ROYAL BANK",
-        details: [
-          ["Title of Account", "JDC WELFARE CANADA"],
-          ["Account No", "1033984"],
-          ["Transit No", "09987"],
-          ["Bank No", "003"],
-          ["Email Transfer", "canada@jdcwelfare.org"],
-        ],
-      }
-    ];
-
-    const bankMenuEl = document.getElementById("bankMenu");
-    const bankLogoEl = document.getElementById("bankLogo");
-    const bankTitleEl = document.getElementById("bankTitle");
-    const bankDetailsEl = document.getElementById("bankDetails");
-
-    function bankRenderMenu(activeKey){
-      bankMenuEl.innerHTML = "";
-
-      for (let i = 0; i < bankData.length; i++){
-        const b = bankData[i];
-
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.textContent = b.key;
-
-        btn.className = "bank-menu-btn";
-        if (b.key === activeKey) btn.className += " bank-menu-btn-active";
-
-        btn.addEventListener("click", function(){
-          bankSelect(b.key);
-        });
-
-        bankMenuEl.appendChild(btn);
-      }
-    }
-
-    function bankRenderDetails(bank){
-      bankLogoEl.textContent = bank.title.toUpperCase();
-      bankTitleEl.textContent = bank.title;
-
-      let html = "";
-      for (let i = 0; i < bank.details.length; i++){
-        const row = bank.details[i];
-        const k = row[0];
-        const v = row[1];
-        html += "<div><span class='bank-details-bold'>" + k + ":</span> " + v + "</div>";
-      }
-      bankDetailsEl.innerHTML = html;
-    }
-
-    function bankSelect(key){
-      let found = bankData[0];
-      for (let i = 0; i < bankData.length; i++){
-        if (bankData[i].key === key){
-          found = bankData[i];
-          break;
-        }
-      }
-      bankRenderMenu(found.key);
-      bankRenderDetails(found);
-    }
-
-    bankSelect("BANK OF SCOTLAND");
-  </script>
-</body>
-</html>
 
 </body>
 </html>
