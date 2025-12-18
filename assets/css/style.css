@@ -522,8 +522,10 @@
   position: absolute;
   inset: 0;
   background: url("../images/header/10001.webp") center/cover no-repeat;
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   filter: blur(2px);
+   will-change: transform;
+  transform: translate3d(0,0,0) scale(1.08);
 }
 
 /* Color overlay (purple -> pink) */
@@ -766,10 +768,7 @@ color: white !important;
 }
 
 /* jab fixed ho */
-.our-media-line.is-fixed {
-  position: fixed !important ;
-  /* left: 0;        */
-}
+
 .our-media{
   display: flex;
   justify-content: center;
