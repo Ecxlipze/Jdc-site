@@ -34,9 +34,11 @@
 
     /* ================= LOGO ================= */
     .brand-logo{
-      width:72px;
-      height:72px;
+      width:90px;
+      max-height:112px;
+      height:auto;
       object-fit:contain;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
     }
 
     /* ================= DESKTOP NAV ================= */
@@ -65,15 +67,59 @@
       transition: all 0.25s ease;
     }
 
-    /* ================= MOBILE TOP ================= */
+    /* ================= MOBILE TOP (sticky) ================= */
     .mobile-top{
       background:#fff;
       border-bottom:1px solid #ddd;
       position: sticky;
       top: 0;
-      z-index: 1030;
+      z-index: 1060;
+      overflow: visible;
     }
-    .mobile-top img{ height:44px; width:auto; }
+
+    /* ✅ MOBILE: logo + typing text side-by-side */
+    .mobile-top .container{
+  position: relative;
+  padding-top: 16px;
+
+  /* ✅ logo ki jagah banayen taa-ke text overlap na ho */
+  padding-left: 95px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+   .mobile-top .mobile-brand{
+  position: absolute;   /* was relative */
+  top: -10px;           /* adjust as you like */
+  left: 0;
+  z-index: 2;
+}
+   .mobile-top .mobile-brand img{
+  width: 90px;
+  max-height: 112px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+}
+
+    /* ✅ hide old right block (1024 + top menu btn) */
+    .mobile-top .mobile-right{
+      display: none !important;
+    }
+
+    .jdc-hero__subline{
+      margin: 0;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.15;
+      color: #111;
+      flex: 1 1 auto;
+    }
+    #jdc-rotate-word{
+      color: var(--jdc-blue);
+    }
 
     /* ================= OVERLAY ================= */
     .menu-overlay{
@@ -86,9 +132,10 @@
       background: rgba(0,0,0,.45);
       backdrop-filter: blur(4px);
     }
+    /* ✅ when open: show overlay BUT don't block scrolling */
     .menu-overlay.show{
       opacity: 1;
-      pointer-events: auto;
+      pointer-events: none; /* important: body scroll works */
     }
 
     /* ================= OFFCANVAS FULL WIDTH ================= */
@@ -109,8 +156,8 @@
 
     #closeMenuBtn{
       position: absolute;
-      top: 14px;
-      right: 14px;
+          top: 16%;
+    right: 7%;
       border:0;
       background: rgba(255,255,255,0.10);
       color:#fff;
@@ -206,6 +253,25 @@
       display:flex;
       align-items:center;
     }
+
+    /* =====================================================
+       ✅ DESKTOP: fixed header + floating logo outside height
+       ===================================================== */
+    .navbar.d-lg-flex{
+      position: sticky;
+      top: 0;
+      z-index: 1060;
+      overflow: visible;
+    }
+    .navbar.d-lg-flex .container{
+      position: relative;
+      padding-top: 18px;
+    }
+    .navbar.d-lg-flex .navbar-brand{
+      position: absolute;
+      top: -13px;
+      left: 0;
+    }
   </style>
 </head>
 
@@ -224,11 +290,10 @@
   </div>
 </div>
 
-<!-- ================= DESKTOP NAV ================= -->
-<nav class="navbar navbar-expand-lg bg-white border-bottom d-none d-lg-flex sticky-top">
+<!-- ================= DESKTOP NAV (fixed on scroll) ================= -->
+<nav class="navbar navbar-expand-lg bg-white border-bottom d-none d-lg-flex">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <!-- replace with your logo -->
       <img src="assets/images/jdc.webp" class="brand-logo" alt="Logo">
     </a>
 
@@ -249,11 +314,19 @@
   </div>
 </nav>
 
-<!-- ================= MOBILE TOP ================= -->
+<!-- ================= MOBILE TOP (logo + typing text) ================= -->
 <div class="mobile-top d-lg-none">
-  <div class="container py-2 d-flex justify-content-between align-items-center">
-    <img src="assets/images/header/logo.png" alt="Logo">
-    <div class="d-flex align-items-center gap-3">
+  <div class="container py-2">
+    <a class="mobile-brand" href="#">
+      <img src="assets/images/jdc.webp" alt="Logo">
+    </a>
+
+    <h4 class="jdc-hero__subline">
+      We are Distributing <span id="jdc-rotate-word">Free Homes</span>
+    </h4>
+
+    <!-- kept but hidden via CSS (as you asked) -->
+    <div class="d-flex align-items-center gap-3 mobile-right">
       <strong>1024</strong>
       <button id="openMenuBtn" class="btn btn-sm btn-outline-dark" type="button">
         <i class="bi bi-list"></i>
@@ -304,7 +377,6 @@
 
   <section class="container py-5">
     <div class="row g-4">
-      <!-- Random Card 1 -->
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm h-100">
           <div class="card-body">
@@ -317,7 +389,6 @@
         </div>
       </div>
 
-      <!-- Random Card 2 -->
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm h-100">
           <div class="card-body">
@@ -330,7 +401,6 @@
         </div>
       </div>
 
-      <!-- Random Card 3 -->
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm h-100">
           <div class="card-body">
@@ -345,12 +415,11 @@
     </div>
   </section>
 </div>
-<!-- end-of-page-content -->
+
 <!-- ================= MOBILE BOTTOM NAV ================= -->
 <div class="mobile-bottom-nav fixed-bottom d-lg-none">
   <div class="container">
     <div class="row text-center">
-
       <div class="col">
         <a href="#" class="d-flex flex-column align-items-center">
           <i class="bi bi-house"></i><span>Home</span>
@@ -380,7 +449,6 @@
           <i class="bi bi-heart-fill"></i><span>Donate</span>
         </a>
       </div>
-
     </div>
   </div>
 </div>
@@ -404,13 +472,12 @@
 
   links.forEach(link => link.addEventListener("mouseenter", () => moveUnderline(link)));
 
-  nav.addEventListener("mouseleave", () => {
+  nav?.addEventListener("mouseleave", () => {
     underline.style.opacity = "0";
     underline.style.width = "0";
   });
 
   // mobile offcanvas
-  const body = document.body;
   const menu = document.getElementById("mobileMenu");
   const overlay = document.getElementById("menuOverlay");
   const openBtnTop = document.getElementById("openMenuBtn");
@@ -420,21 +487,19 @@
   function openMenu(){
     menu.classList.add("open");
     overlay.classList.add("show");
-    body.style.overflow = "hidden";
+    // ✅ body scroll allow (NO overflow hidden)
     menu.setAttribute("aria-hidden", "false");
   }
 
   function closeMenu(){
     menu.classList.remove("open");
     overlay.classList.remove("show");
-    body.style.overflow = "";
     menu.setAttribute("aria-hidden", "true");
   }
 
   openBtnTop?.addEventListener("click", openMenu);
   openBtnBottom?.addEventListener("click", openMenu);
-  closeBtn.addEventListener("click", closeMenu);
-  overlay.addEventListener("click", closeMenu);
+  closeBtn?.addEventListener("click", closeMenu);
 
   document.addEventListener("keydown", (e) => {
     if(e.key === "Escape" && menu.classList.contains("open")) closeMenu();
@@ -443,7 +508,48 @@
   // accordion
   const campAcc = document.getElementById("campAcc");
   const campBtn = document.getElementById("campBtn");
-  campBtn.addEventListener("click", () => campAcc.classList.toggle("open"));
+  campBtn?.addEventListener("click", () => campAcc.classList.toggle("open"));
+
+  // ✅ rotating/typing words (mobile header)
+  const words = ["Free Homes","Food","Clothes","Education","Healthcare","Hope"];
+  const textEl = document.getElementById("jdc-rotate-word");
+
+  if (textEl) {
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const typingSpeed = 90;
+    const deletingSpeed = 50;
+    const holdAfterType = 1200;
+    const holdAfterDelete = 400;
+
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+
+      if (!isDeleting) {
+        textEl.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentWord.length) {
+          setTimeout(() => (isDeleting = true), holdAfterType);
+        }
+      } else {
+        textEl.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(() => {}, holdAfterDelete);
+        }
+      }
+
+      setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+    }
+
+    typeEffect();
+  }
 </script>
 
 </body>
