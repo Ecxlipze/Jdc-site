@@ -20,7 +20,7 @@
       max-height:112px;
       height:auto;
       object-fit:contain;
-      /* filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15)); */
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
     }
 
     /* ================= DESKTOP NAV ================= */
@@ -537,7 +537,7 @@
 .jdc-hero__bg {
   position: absolute;
   inset: 0;
-  background: url("../images/header/10001.webp") center/cover no-repeat;
+  background: url("../images/About\ Us\ Image.jpg") center/cover no-repeat;
   /* transform: scale(1.05); */
   filter: blur(2px);
    will-change: transform;
@@ -545,11 +545,11 @@
 }
 
 /* Color overlay (purple -> pink) */
-.jdc-hero::before {
+.jdc-hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(38, 34, 92, 0.88), rgba(232, 76, 132, 0.80));
+  background: rgba(0, 0, 0, 0.55) !important;
 }
 
 /* Container */
@@ -670,82 +670,82 @@
 
 /* all-images-section */
 .all-image-1{
-  background-image: url(../images/header/10001\ \(1\).webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Basic\ Support\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 .all-image-2{
-  background-image: url(../images/header/10002.webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Distnt\ Learning\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 
 .all-image-3{
-  background-image: url(../images/header/10003.jpeg);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Child\ Health\ And\ Learning\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 
 .all-image-4{
-  background-image: url(../images/header//10004.jpg);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Community\ Institutions\ Support\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 .all-image-5{
-  background-image: url(../images/header//10005.webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Digital\ Access\ And\ Tools\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 
 .all-image-6{
-  background-image: url(../images/header/10006.webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Learning\ Content\ And\ Quality\ Progams.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 
 .all-image-7{
-  background-image: url(../images/header/10007.webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Continuity\ And\ Crisis\ Support\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 
 .all-image-8{
-  background-image: url(../images/header/10008.webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Nutritions\ And\ Wellness\ Awreness\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 
 .all-image-9{
-  background-image: url(../images/header/10009.webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Digital\ Access\ And\ Tools\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 
 .all-image-10{
-  background-image: url(../images/header/10010.webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Monitoring\,\ Learning\ And\ Impact\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 
 .all-image-11{
-  background-image: url(../images/header/10011.webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Skills\ And\ Livelihood\ Reainess\ Program.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
 }
 
 .all-image-12{
-  background-image: url(../images/header/10012.webp);
+  background-image: url(../images/HomePageOurProgramImages/Madad\ Research\ And\ System\ Learning\ Progrm.jpg);
   background-size: 100% 100%;
   
    border-radius: 15px 15px 15px 15px;
@@ -932,7 +932,7 @@ color: white !important;
   top: 50%;
 
   /* move center image up so it goes outside top/bottom */
-  transform: translate(-50%, -50%) translateY(-35px);
+  transform: translate(-62%, -44%) translateY(-35px);
 
   z-index: 10;         /* on top */
   pointer-events: none;
@@ -1006,10 +1006,11 @@ color: white !important;
   align-items:center;
   justify-content:center;
   border-radius: 999px;
-  background: #272b6a;
-  color: #fff;
+  /* background: #272b6a;
+  color: #fff; */
   text-decoration:none;
-  transition: transform .2s ease, opacity .2s ease;
+  /* transition: transform .2s ease, opacity .2s ease; */
+  transition: transform 0.3s ease; 
 }
 
 .hero-social .ico i{
@@ -1018,8 +1019,9 @@ color: white !important;
 }
 
 .hero-social .ico:hover{
-  transform: translateY(-2px);
-  opacity: .9;
+  /* transform: translateY(-2px); */
+  /* opacity: .9; */
+    transform: scale(1.2);
 }
 
 
@@ -1082,7 +1084,7 @@ color: white !important;
     }
     .footer-social a {
   display: inline-block;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease;  
 }
 
 .footer-social a:hover {
@@ -1205,10 +1207,12 @@ color: white !important;
   content: "";
   position: absolute;
   inset: 0;
-  /* background: rgba(19, 30, 95, 0.75); */
+  /* background: rgba(33, 33, 36, 0.75); */
   transition: background 0.3s ease;
 }
-
+.campaign-card::after{
+  /* background: rgba(19, 30, 95, 0.75); */
+}
 /* Text */
 .campaign-card span {
   position: relative;
@@ -1218,7 +1222,9 @@ color: white !important;
   line-height: 1.2;
   z-index: 1;
 }
-
+.campaign-card {
+  color: white;
+}
 /* Hover */
 .campaign-card:hover::before {
   background: rgba(19, 30, 95, 0.55);
@@ -1444,7 +1450,8 @@ color: white !important;
       font-size:13px;
       font-weight:600;
       margin-bottom:8px;
-      text-align:center;
+      /* text-align:center; */
+      padding-left: 2%;
     }
     .left-label label{ text-align:left; }
 

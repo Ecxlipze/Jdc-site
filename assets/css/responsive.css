@@ -212,6 +212,9 @@
       .container-fluid-line{
         display: none;
       }
+      .hero-center{
+        display: none;
+      }
 }
 /* laptops */
 @media (min-width: 992px) and (max-width: 1199px) {
