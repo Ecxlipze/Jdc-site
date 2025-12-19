@@ -20,7 +20,7 @@
       max-height:112px;
       height:auto;
       object-fit:contain;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+      /* filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15)); */
     }
 
     /* ================= DESKTOP NAV ================= */
@@ -261,22 +261,35 @@
 } */
 
 .donation-banner {
+  position: relative;
   width: 100%;
   min-height: 80vh;
-  background-image: url("../images/header/index-1920.png");
+  background-image: url("../images/HomePageImages/1st Image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 20px;
+  overflow: hidden;
+}
+
+/* Overlay */
+.donation-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* dark overlay */
+  z-index: 1;
 }
 
 /* Content */
 .banner-content {
+  position: relative;
+  z-index: 2;
   max-width: 800px;
   color: #fff;
 }
@@ -1032,7 +1045,7 @@ color: white !important;
     }
 
     .footer-logo-box{
-      background:#1a2f63;
+      /* background:#1a2f63; */
       border-radius:14px;
       padding:14px;
       width:130px;
@@ -1057,17 +1070,24 @@ color: white !important;
     }
 
     .footer-social a{
-      width:34px;
+      /* width:34px;
       height:34px;
       background:rgba(255,255,255,.15);
-      border-radius:50%;
+      border-radius:50%; */
       display:inline-flex;
       align-items:center;
       justify-content:center;
       color:#fff;
       text-decoration:none;
     }
-    .footer-social a:hover{ background:rgba(255,255,255,.25); }
+    .footer-social a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+}
 
     .footer-heading{
       font-weight:800;
