@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Madad Learning Content & Quality Program (MLCQP)
+</title>
+
+  <!-- Bootstrap 5.3.8 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+  
+  </style>
+</head>
+
+<body>
+
+<!-- ================= TOP BAR (DESKTOP) ================= -->
+<div class="topbar py-2 d-none d-lg-block">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-3 align-items-center">
+        <!-- <strong>🚑 AMBULANCE HELPLINE 1024</strong> -->
+        <a href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+      </div>
+      <!-- <a href="#"><i class="bi bi-heart-fill"></i> Become a Volunteer</a> -->
+    </div>
+  </div>
+</div>
+
+<!-- ================= DESKTOP NAV (fixed on scroll) ================= -->
+<nav class="navbar navbar-expand-lg bg-white border-bottom d-none d-lg-flex">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="../assets/images/jdc.webp" class="brand-logo" alt="Logo">
+    </a>
+
+    <ul class="navbar-nav mx-auto gap-3 nav-hover">
+      <span class="nav-underline"></span>
+      <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="../project.html">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="../blogs.html">Blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+    </ul>
+
+    <div class="d-flex gap-2">
+      <a href="../donate.html" class="btn-donate">Donate Now</a>
+    
+    </div>
+  </div>
+</nav>
+
+<!-- ================= MOBILE TOP (logo + typing text) ================= -->
+<div class="mobile-top d-lg-none">
+  <div class="container py-2">
+    <a class="mobile-brand" href="#">
+      <img src="../assets/images/jdc.webp" alt="Logo">
+    </a>
+
+    <h4 class="jdc-hero__subline">
+      We are Distributing <span id="jdc-rotate-word">Free Homes</span>
+    </h4>
+
+    <!-- kept but hidden via CSS (as you asked) -->
+    <div class="d-flex align-items-center gap-3 mobile-right">
+      <strong>1024</strong>
+      <button id="openMenuBtn" class="btn btn-sm btn-outline-dark" type="button">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- OFFCANVAS -->
+<aside id="mobileMenu" aria-hidden="true">
+  <button id="closeMenuBtn" aria-label="Close Menu">&times;</button>
+
+  <div class="menu-body">
+<a href="../index.html" class="menu-item"><i class="bi "></i> Home</a>
+
+
+    <!-- <div class="menu-accordion" id="campAcc">
+      <button class="menu-acc-btn" type="button" id="campBtn">
+        <span class="d-flex align-items-center gap-2 justify-content-center w-100">
+          <i class="bi bi-megaphone"></i> Campaigns
+        </span>
+        <i class="bi bi-chevron-down chev"></i>
+      </button>
+
+      <div class="menu-acc-panel" id="campPanel">
+        <a href="#">Campaign 1</a>
+        <a href="#">Campaign 2</a>
+      </div>
+    </div>
+
+    <a href="#" class="menu-item"><i class="bi bi-person"></i> Founder Profile</a>
+    <a href="#" class="menu-item"><i class="bi bi-info-circle"></i> Our Profile</a>
+    <a href="#" class="menu-item"><i class="bi bi-telephone"></i> Contact</a>
+    <a href="#" class="menu-item"><i class="bi bi-heart-fill"></i> Make a Quick Donation</a> -->
+<a href="../project.html" class="menu-item"><i class="bi "></i> Project</a>
+    <a href="../blogs.html" class="menu-item"><i class="bi "></i> Blog</a>
+    <a href="../about.html" class="menu-item"><i class="bi "></i> About</a>
+    <a href="../contact.html" class="menu-item"><i class="bi "></i> Contact</a>
+
+    <a href="../donate.html" class="menu-item"><i class="bi "></i> Donate</a>
+
+
+  </div>
+</aside>
+    <!-- ================= PAGE CONTENT ================= -->
+    <section class="page-banner">
+        <img src="../assets/images/project/banner8.webp" alt="Page Banner">
+    </section>
+
+    <section class="content-section py-5">
+        <div class="container">
+
+            <div class="row align-items-center g-4 mb-4">
+
+                <!-- Text -->
+                <div class="col-lg-6">
+                    <h2 class="section-heading">Ensuring Learning Is Safe, Neutral, and Effective</h2>
+                    <p>
+                      Learning shapes how children and communities understand the world. The Madad Learning Content & Quality Program ensures that all educational materials used in Madad Farma programs are safe, neutral, relevant, and supportive of real learning.</p>
+                    <p>This program exists to protect learners from content that is biased, harmful, or misleading, while helping them grow with knowledge that truly matters.</p>
+                    <!-- <p>To this day, Pakistan has recorded 1.39 million covid cases and 29,122 deaths subsequently.</p> -->
+                </div>
+
+                <!-- Image -->
+                <div class="col-lg-6">
+                    <img src="../assets/images/project/orphan1.webp" alt="" class="content-img">
+                </div>
+
+            </div>
+
+            <!-- Full paragraph -->
+            <!-- <p class="section-paragraph">
+          The JDC orphanage is built on a 1000-yard plot donated by GFS Builders and Developers. Unfortunately, the government has not taken stern steps to help solve this problem, which is why many private foundations have stepped up to support the kids. JDC foundation, after the success of their Old Age Home, decided to launch an Orphanage House in Malir, Karachi.  </p> -->
+
+        </div>
+    </section>
+    <section class="content-section py-5 bg-light">
+        <div class="container">
+
+            <div class="row align-items-center g-4 mb-4">
+
+                <!-- Image -->
+                <div class="col-lg-6">
+                    <img src="../assets/images/project/orphan2.webp" alt="" class="content-img">
+                </div>
+
+                <!-- Text -->
+                <div class="col-lg-6">
+                   <h2 class="section-heading">What This Program Supports</h2>
+                    <p>
+The program provides careful review and management of educational content, including:</p>
+
+              <ul>
+                <li>Selecting and reviewing materials for accuracy, clarity, and appropriateness</li>
+                <li>Aligning content with basic learning objectives and local needs</li>
+                <li>Ensuring quality across distance learning and supported programs</li>
+                <li>Adapting content for accessibility, context, and learner understanding</li>
+                
+              </ul>
+                    <p>All content is chosen to support learning outcomes without political, ideological, or commercial influence.</p>
+                      
+                </div>
+
+            </div>
+
+            <!-- Full paragraph -->
+            <!-- <p class="section-paragraph">
+               The JDC orphanage has plans of providing not only the basic life necessities such as food, water, clothing, and shelter but also to provide education with help of expert psychologists, physical trainers, arts & crafts specialists to help these kids develop skills that will aid them in their future. JDC orphanage will be providing children with the best possible facilities. So we request you to help us in providing these children the childhood they deserve, to give them moments of happiness, and to give them a chance to win in life. Support us and donate to help us build a home where these orphans can live and grow without the worries of the ill of society. JDC Orphanage will be responsible for the health and safety of these kids, and we ask you to help us in this goodwill act and become a reason for smiles on the faces of children.</p> -->
+
+        </div>
+    </section>
+
+ <!-- new-section -->
+     <div class="container-fluid mt-5">
+      <div class="container">
+       <div class="col-md-12">
+        <div class="new-section-mcsp-1">
+          <h2>How Support Is Delivered</h2>
+          <p>Support under this program is delivered through:</p>
+          <ul>
+            <li>Structured content review frameworks</li>
+            <li>Collaboration with education professionals and partner institutions</li>
+            <li>Alignment with existing curricula where appropriate</li>
+          </ul>
+          <p>Madad Farma does not create parallel curricula or issue certifications independently. The focus is always on supporting learning, not promoting recognition.</p>
+          
+        </div>
+       </div>
+      </div>
+     </div>
+
+
+
+    <section class="cta-section py-5">
+        <div class="container text-center">
+
+
+            <!-- Center button -->
+            <a href="../donate.html" class="btn-donate">Donate Now</a>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- FOOTER -->
+    <!-- ======= FOOTER ======= -->
+    <footer class="footer-jdc">
+        <div class="container py-5">
+            <div class="row gy-4 align-items-start">
+
+                <!-- LEFT -->
+                <div class="col-12 col-lg-4">
+                    <div class="footer-left">
+
+                        <!-- Logo -->
+                        <div class="footer-logo-box">
+                            <img src="../assets/images/header/logo.png" alt="JDC">
+                        </div>
+
+                        <!-- Paragraph -->
+                        <p class="footer-text">
+                            A decade ago, JDC Foundation, a charitable and nonprofit organization journey starting from
+                            a
+                            small camp established at a densely populated area of Aisha Manzil, Karachi.
+                        </p>
+
+                        <!-- Social -->
+                        <div class="footer-social d-flex gap-3">
+                            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CENTER -->
+                <div class="col-12 col-lg-5">
+                    <h2 class="footer-heading  ">Our Campaigns</h2>
+
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <ul class="footer-links">
+                                <li><a href="#">Flood Relief Fund</a></li>
+                                <li><a href="#">Qurbani</a></li>
+                                <li><a href="#">Zakat</a></li>
+                                <li><a href="#">Fitra</a></li>
+                                <li><a href="#">Old Age Homes</a></li>
+                                <li><a href="#">Orphanage House</a></li>
+                                <li><a href="#">Ambulance Services</a></li>
+                                <li><a href="#">Donate to Palestine</a></li>
+                                <li><a href="#">Free Mortuary In Karachi</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-md-6 mt-3 mt-md-0">
+                            <ul class="footer-links">
+                                <li><a href="#">Free Mobile Restaurant</a></li>
+                                <li><a href="#">Free School</a></li>
+                                <li><a href="#">Free IT City</a></li>
+                                <li><a href="#">Free Education Karachi</a></li>
+                                <li><a href="#">Free Diagnostic Lab</a></li>
+                                <li><a href="#">Free Dialysis Center</a></li>
+                                <li><a href="#">Free COVID-19 Hospital</a></li>
+                                <li><a href="#">Free Dastarkhwan</a></li>
+                                <li><a href="#">Free Transport Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="col-12 col-lg-3">
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit">SUBMIT</button>
+                    </form>
+
+                    <h3 class="footer-heading-sm">Contact Info</h3>
+
+                    <p class="footer-contact">
+                        B-24, Federal B Area Ancholi Block 20<br>
+                        Gulberg Town, Karachi
+                    </p>
+                    <p class="footer-contact">(021) 36341059</p>
+                    <p class="footer-contact">
+                        <a class="text-white text-decoration-none"
+                            href="mailto:info@jdcwelfare.org">info@jdcwelfare.org</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- end-of-page-content -->
+    <!-- ================= MOBILE BOTTOM NAV ================= -->
+<div class="mobile-bottom-nav fixed-bottom d-lg-none">
+  <div class="container">
+    <div class="row text-center">
+
+      <div class="col">
+        <a href="../index.html" class="d-flex flex-column align-items-center">
+          <i class="bi bi-house"></i><span>Home</span>
+        </a>
+      </div>
+
+      <!-- <div class="col">
+        <a href="tel:1024" class="d-flex flex-column align-items-center">
+          <i class="bi bi-truck"></i><span>Helpline</span>
+        </a>
+      </div> -->
+
+      <div class="col">
+        <a id="openMenuBtnBottom" role="button" class="d-flex flex-column align-items-center">
+          <i class="bi bi-list"></i><span>Menu</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="#" class="d-flex flex-column align-items-center">
+          <i class="bi bi-whatsapp"></i><span>WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="../donate.html" class="d-flex flex-column align-items-center">
+          <i class="bi bi-heart-fill"></i><span>Donate</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/mobile-menu.js" ></script>
+
+</body>
+
+</html>
