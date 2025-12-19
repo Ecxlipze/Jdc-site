@@ -340,6 +340,9 @@
   position: relative;
 }
 
+.home-new-addition-content h1,p{
+  /* width: 90%; */
+}
 /* Hands background on right side */
 .donation-card__bg{
   position:absolute;
