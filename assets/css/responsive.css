@@ -163,6 +163,9 @@
    .container-fluid-line{
         display: none;
       }
+      .home-new-addition-content{
+        text-align: center;
+      }
 }
 /* tablets */
 @media (min-width: 768px) and (max-width: 991px) {
