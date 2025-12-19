@@ -1207,7 +1207,7 @@ color: white !important;
   content: "";
   position: absolute;
   inset: 0;
-  /* background: rgba(33, 33, 36, 0.75); */
+  background: linear-gradient(rgba(63, 50, 85, 0.85), rgba(63, 50, 85, 0.85));; 
   transition: background 0.3s ease;
 }
 .campaign-card::after{
@@ -1225,12 +1225,17 @@ color: white !important;
 .campaign-card {
   color: white;
 }
+.campaign-card h4{
+  z-index: 999;
+}
 /* Hover */
 .campaign-card:hover::before {
   background: rgba(19, 30, 95, 0.55);
 }
 
-
+a{
+  text-decoration-line: none;
+}
 .blog-card {
   background: #fff;
   border: 1px solid #e5e5e5;
