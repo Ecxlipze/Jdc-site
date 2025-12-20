@@ -966,11 +966,11 @@ color: white !important;
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(90deg,
+  /* background: linear-gradient(90deg,
     rgba(255,255,255,0) 0%,
     rgba(255,255,255,.55) 55%,
     rgba(255,255,255,1) 78%
-  );
+  ); */
 }
 
 /* RIGHT CONTENT - slide in */
@@ -990,7 +990,7 @@ color: white !important;
 
 /* Optional: make merge feel smoother behind center */
 .hero-right{
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff 35%);
+  /* background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff 35%); */
 }
 
 .hero-social{
