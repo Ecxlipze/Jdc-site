@@ -846,10 +846,9 @@ color: white !important;
   align-items: center;      /* horizontal center */
   text-align: center;
   color: white;
-   background: linear-gradient(
-  rgba(63, 50, 85, 0.85),
-  rgba(63, 50, 85, 0.85)
-);
+  background: linear-gradient(
+  rgba(60, 179, 113, 0.85),
+  rgba(60, 179, 113, 0.85));
 }
 
 [class^="all-image-"] h1 {
@@ -1207,7 +1206,10 @@ color: white !important;
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(63, 50, 85, 0.85), rgba(63, 50, 85, 0.85));; 
+ background: linear-gradient(
+  rgba(60, 179, 113, 0.85),
+  rgba(60, 179, 113, 0.85)
+);
   transition: background 0.3s ease;
 }
 .campaign-card::after{
@@ -1230,7 +1232,10 @@ color: white !important;
 }
 /* Hover */
 .campaign-card:hover::before {
-  background: rgba(19, 30, 95, 0.55);
+ background: linear-gradient(
+  rgba(19, 95, 30, 0.55),
+  rgba(10, 70, 20, 0.55)
+);
 }
 
 a{
